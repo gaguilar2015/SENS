@@ -1,0 +1,4505 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<codeBook version="1.2.2" ID="QIDANDREV" xml-lang="en" xmlns="http://www.icpsr.umich.edu/DDI" xsi:SchemaLocation="http://www.icpsr.umich.edu/DDI http://www.icpsr.umich.edu/DDI/Version1-2-2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <docDscr>
+    <citation>
+      <titlStmt>
+        <titl>Standardized Expanded Nutrition Survey</titl>
+      </titlStmt>
+      <prodStmt>
+        <copyright>
+        </copyright>
+        <software version="1.0.0" date="2015-07-08">StatDDI</software>
+      </prodStmt>
+    </citation>
+    <notes>
+    </notes>
+  </docDscr>
+  <stdyDscr>
+    <citation>
+      <titlStmt>
+        <titl>Standardized Expanded Nutrition Survey</titl>
+        <IDNO>QUEST</IDNO>
+      </titlStmt>
+      <prodStmt>
+        <software version="1.0.0" date="2015-07-08">StatDDI</software>
+      </prodStmt>
+    </citation>
+  </stdyDscr>
+  <dataDscr>
+    <var ID="V1" name="interview__id" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Unique 32-character long identifier of the interview]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V2" name="interview__key" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Interview key (identifier in XX-XX-XX-XX format)]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V3" name="assignment__id" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Assignment id (identifier in numeric format)]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V4" name="sssys_irnd" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Random number in the range 0..1 associated with interview]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V5" name="has__errors" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Errors count in the interview]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V6" name="interview__status" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Status of the interview]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V7" name="CAMPNAME" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Camp name]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[ID1. Camp Name]]></qstnLit>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V8" name="SECTION" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Section Code / Number]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[ID2. Section Code / Number]]></qstnLit>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V9" name="ZONE" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Zone Number]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[ID3. Zone Code / Number]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V10" name="BLOCK" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Block Number]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[ID4. Block Code / Number]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V11" name="CLUSTER" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Cluster Number]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[ID6. Cluster Number]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V12" name="HH" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Household Number]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[ID8. Household Number]]></qstnLit>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V13" name="SURVDAT" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Survey date]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[ID5. Survey Date]]></qstnLit>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V14" name="COUNTRY" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Country of survey]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[ID6: Country]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>4</catValu>
+        <labl><![CDATA[Afghanistan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[Albania]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>10</catValu>
+        <labl><![CDATA[Antartica]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>12</catValu>
+        <labl><![CDATA[Algeria]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>16</catValu>
+        <labl><![CDATA[American Samoa]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>20</catValu>
+        <labl><![CDATA[Andorra]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>24</catValu>
+        <labl><![CDATA[Angola]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>28</catValu>
+        <labl><![CDATA[Antigua and Barbuda]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>31</catValu>
+        <labl><![CDATA[Azerbaijan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>32</catValu>
+        <labl><![CDATA[Argentina]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>36</catValu>
+        <labl><![CDATA[Australia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>40</catValu>
+        <labl><![CDATA[Austria]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>44</catValu>
+        <labl><![CDATA[Bahamas]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>48</catValu>
+        <labl><![CDATA[Bahrein]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>50</catValu>
+        <labl><![CDATA[Bangladesh]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>51</catValu>
+        <labl><![CDATA[Armenia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>52</catValu>
+        <labl><![CDATA[Barbados]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>56</catValu>
+        <labl><![CDATA[Belgium]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>60</catValu>
+        <labl><![CDATA[Bermuda]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>64</catValu>
+        <labl><![CDATA[Bhutan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>68</catValu>
+        <labl><![CDATA[Bolivia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>70</catValu>
+        <labl><![CDATA[Bosnia and Herzegovina]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>72</catValu>
+        <labl><![CDATA[Botswana]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>74</catValu>
+        <labl><![CDATA[Bouvet Island]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>76</catValu>
+        <labl><![CDATA[Brazil]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>84</catValu>
+        <labl><![CDATA[Belize]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>86</catValu>
+        <labl><![CDATA[British Indian Ocean Territory]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>90</catValu>
+        <labl><![CDATA[Solomon Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>92</catValu>
+        <labl><![CDATA[Virgin Islands, British]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>96</catValu>
+        <labl><![CDATA[Brunei Darussalam]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>100</catValu>
+        <labl><![CDATA[Bulgaria]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>104</catValu>
+        <labl><![CDATA[Myanmar]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>108</catValu>
+        <labl><![CDATA[Burundi]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>112</catValu>
+        <labl><![CDATA[Belarus]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>116</catValu>
+        <labl><![CDATA[Cambodia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>120</catValu>
+        <labl><![CDATA[Cameroon]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>124</catValu>
+        <labl><![CDATA[Canada]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>132</catValu>
+        <labl><![CDATA[Cape Verde]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>136</catValu>
+        <labl><![CDATA[Caiman Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>140</catValu>
+        <labl><![CDATA[Central African Republic]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>144</catValu>
+        <labl><![CDATA[Sri Lanka]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>148</catValu>
+        <labl><![CDATA[Chad]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>152</catValu>
+        <labl><![CDATA[Chile]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>156</catValu>
+        <labl><![CDATA[China]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>158</catValu>
+        <labl><![CDATA[Taiwan, Province of China]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>162</catValu>
+        <labl><![CDATA[Christmas Island]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>166</catValu>
+        <labl><![CDATA[Cocos (Keeling) Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>170</catValu>
+        <labl><![CDATA[Colombia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>174</catValu>
+        <labl><![CDATA[Comoros]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>175</catValu>
+        <labl><![CDATA[Mayotte]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>178</catValu>
+        <labl><![CDATA[Congo]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>180</catValu>
+        <labl><![CDATA[Congo, the Democratic Republic of the]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>184</catValu>
+        <labl><![CDATA[Cook Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>188</catValu>
+        <labl><![CDATA[Costa Rica]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>191</catValu>
+        <labl><![CDATA[Croatia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>192</catValu>
+        <labl><![CDATA[Cuba]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>196</catValu>
+        <labl><![CDATA[Cyprus]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>203</catValu>
+        <labl><![CDATA[Czech Republic]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>204</catValu>
+        <labl><![CDATA[Benin]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>208</catValu>
+        <labl><![CDATA[Denmark]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>212</catValu>
+        <labl><![CDATA[Dominica]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>214</catValu>
+        <labl><![CDATA[Dominican Republic]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>218</catValu>
+        <labl><![CDATA[Ecuador]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>222</catValu>
+        <labl><![CDATA[El Salvador]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>226</catValu>
+        <labl><![CDATA[Equatorial Guinea]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>231</catValu>
+        <labl><![CDATA[Ethiopia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>232</catValu>
+        <labl><![CDATA[Eritrea]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>233</catValu>
+        <labl><![CDATA[Estonia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>234</catValu>
+        <labl><![CDATA[Faroe Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>238</catValu>
+        <labl><![CDATA[Falkland Islands (Malvinas)]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>239</catValu>
+        <labl><![CDATA[South Georgia and the South Sandwich Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>242</catValu>
+        <labl><![CDATA[Fiji]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>246</catValu>
+        <labl><![CDATA[Finland]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>248</catValu>
+        <labl><![CDATA[Aland Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>250</catValu>
+        <labl><![CDATA[France]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>254</catValu>
+        <labl><![CDATA[French Guiana]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>258</catValu>
+        <labl><![CDATA[French Polynesia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>260</catValu>
+        <labl><![CDATA[French Southern Territories]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>262</catValu>
+        <labl><![CDATA[Djibouti]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>266</catValu>
+        <labl><![CDATA[Gabon]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>268</catValu>
+        <labl><![CDATA[Georgia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>270</catValu>
+        <labl><![CDATA[Gambia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>275</catValu>
+        <labl><![CDATA[Palestinian Territory, Occupied]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>276</catValu>
+        <labl><![CDATA[Germany]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>288</catValu>
+        <labl><![CDATA[Ghana]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>292</catValu>
+        <labl><![CDATA[Gibraltar]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>296</catValu>
+        <labl><![CDATA[Kiribati]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>300</catValu>
+        <labl><![CDATA[Greece]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>304</catValu>
+        <labl><![CDATA[Greenland]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>308</catValu>
+        <labl><![CDATA[Grenada]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>312</catValu>
+        <labl><![CDATA[Guadeloupe]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>316</catValu>
+        <labl><![CDATA[Guam]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>320</catValu>
+        <labl><![CDATA[Guatemala]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>324</catValu>
+        <labl><![CDATA[Guinea]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>328</catValu>
+        <labl><![CDATA[Guyana]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>332</catValu>
+        <labl><![CDATA[Haiti]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>334</catValu>
+        <labl><![CDATA[heard Islands and McDonald Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>336</catValu>
+        <labl><![CDATA[Holy See (Vatican City State)]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>340</catValu>
+        <labl><![CDATA[Honduras]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>344</catValu>
+        <labl><![CDATA[Hong Kong]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>348</catValu>
+        <labl><![CDATA[Hungary]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>352</catValu>
+        <labl><![CDATA[Iceland]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>356</catValu>
+        <labl><![CDATA[India]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>360</catValu>
+        <labl><![CDATA[Indonesia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>364</catValu>
+        <labl><![CDATA[Iran, Islamic Republic of]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>368</catValu>
+        <labl><![CDATA[Iraq]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>372</catValu>
+        <labl><![CDATA[Ireland]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>376</catValu>
+        <labl><![CDATA[Israel]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>380</catValu>
+        <labl><![CDATA[Italy]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>384</catValu>
+        <labl><![CDATA[Côte d’Ivoire]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>388</catValu>
+        <labl><![CDATA[Jamaica]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>392</catValu>
+        <labl><![CDATA[Japan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>398</catValu>
+        <labl><![CDATA[Kazakhstan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>400</catValu>
+        <labl><![CDATA[Jordan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>404</catValu>
+        <labl><![CDATA[Kenya]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>408</catValu>
+        <labl><![CDATA[Korea, Democratic People’s Republic of]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>410</catValu>
+        <labl><![CDATA[Korea, Republic of]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>414</catValu>
+        <labl><![CDATA[Kuwait]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>417</catValu>
+        <labl><![CDATA[Kyrgyzstan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>418</catValu>
+        <labl><![CDATA[Lao People’s Democratic Republic]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>422</catValu>
+        <labl><![CDATA[Lebanon]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>426</catValu>
+        <labl><![CDATA[Lesotho]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>428</catValu>
+        <labl><![CDATA[Latvia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>430</catValu>
+        <labl><![CDATA[Liberia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>434</catValu>
+        <labl><![CDATA[Libyan Arab Jamahiriya]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>438</catValu>
+        <labl><![CDATA[Liechtenstein]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>440</catValu>
+        <labl><![CDATA[Lithuania]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>442</catValu>
+        <labl><![CDATA[Luxembourg]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>446</catValu>
+        <labl><![CDATA[Macao]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>450</catValu>
+        <labl><![CDATA[Madagascar]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>454</catValu>
+        <labl><![CDATA[Malawi]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>458</catValu>
+        <labl><![CDATA[Malaysia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>462</catValu>
+        <labl><![CDATA[Maldives]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>466</catValu>
+        <labl><![CDATA[Mali]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>470</catValu>
+        <labl><![CDATA[Malta]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>474</catValu>
+        <labl><![CDATA[Martinique]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>478</catValu>
+        <labl><![CDATA[Mauritania]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>480</catValu>
+        <labl><![CDATA[Mauritius]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>484</catValu>
+        <labl><![CDATA[Mexico]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>492</catValu>
+        <labl><![CDATA[Monaco]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>496</catValu>
+        <labl><![CDATA[Mongolia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>498</catValu>
+        <labl><![CDATA[Moldova]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>499</catValu>
+        <labl><![CDATA[Montenegro]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>500</catValu>
+        <labl><![CDATA[Montserrat]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>504</catValu>
+        <labl><![CDATA[Morocco]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>508</catValu>
+        <labl><![CDATA[Mozambique]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>512</catValu>
+        <labl><![CDATA[Oman]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>516</catValu>
+        <labl><![CDATA[Namibia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>520</catValu>
+        <labl><![CDATA[Nauru]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>524</catValu>
+        <labl><![CDATA[Nepal]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>528</catValu>
+        <labl><![CDATA[Netherlands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>530</catValu>
+        <labl><![CDATA[Netherlands Antilles]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>533</catValu>
+        <labl><![CDATA[Aruba]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>540</catValu>
+        <labl><![CDATA[New Caledonia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>548</catValu>
+        <labl><![CDATA[Vanuatu]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>554</catValu>
+        <labl><![CDATA[New Zealand]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>558</catValu>
+        <labl><![CDATA[Nicaragua]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>562</catValu>
+        <labl><![CDATA[Niger]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>566</catValu>
+        <labl><![CDATA[Nigeria]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>570</catValu>
+        <labl><![CDATA[Niue]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>574</catValu>
+        <labl><![CDATA[Norfolk Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>578</catValu>
+        <labl><![CDATA[Norway]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>580</catValu>
+        <labl><![CDATA[Northern Mariana Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>581</catValu>
+        <labl><![CDATA[United States Minor Outlying Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>583</catValu>
+        <labl><![CDATA[Micronesia, Federated States of]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>584</catValu>
+        <labl><![CDATA[Marshall Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>585</catValu>
+        <labl><![CDATA[Palau]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>586</catValu>
+        <labl><![CDATA[Pakistan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>591</catValu>
+        <labl><![CDATA[Panama]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>598</catValu>
+        <labl><![CDATA[Papua New Guinea]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>600</catValu>
+        <labl><![CDATA[Paraguay]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>604</catValu>
+        <labl><![CDATA[Peru]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>608</catValu>
+        <labl><![CDATA[Philippines]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>612</catValu>
+        <labl><![CDATA[Pitcairn]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>616</catValu>
+        <labl><![CDATA[Poland]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>620</catValu>
+        <labl><![CDATA[Portugal]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>624</catValu>
+        <labl><![CDATA[Guinea Bissau]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>626</catValu>
+        <labl><![CDATA[Timor Leste]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>630</catValu>
+        <labl><![CDATA[Puerto Rico]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>634</catValu>
+        <labl><![CDATA[Qatar]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>638</catValu>
+        <labl><![CDATA[Réunion]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>642</catValu>
+        <labl><![CDATA[Romania]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>643</catValu>
+        <labl><![CDATA[Russian Federation]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>646</catValu>
+        <labl><![CDATA[Rwanda]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>652</catValu>
+        <labl><![CDATA[Saint Barthélemy]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>654</catValu>
+        <labl><![CDATA[Saint Helena]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>659</catValu>
+        <labl><![CDATA[Saint Kitts and Nevis]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>660</catValu>
+        <labl><![CDATA[Anguilla]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>662</catValu>
+        <labl><![CDATA[Saint Lucia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>663</catValu>
+        <labl><![CDATA[Saint Martin (French part)]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>666</catValu>
+        <labl><![CDATA[Saint Pierre and Miquelon]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>670</catValu>
+        <labl><![CDATA[Saint Vincent and the Grenadines]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>674</catValu>
+        <labl><![CDATA[San Marino]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>678</catValu>
+        <labl><![CDATA[Sao Tome and Principe]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>682</catValu>
+        <labl><![CDATA[Saudi Arabia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>686</catValu>
+        <labl><![CDATA[Senegal]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>688</catValu>
+        <labl><![CDATA[Serbia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>690</catValu>
+        <labl><![CDATA[Seychelles]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>694</catValu>
+        <labl><![CDATA[Sierra Leone]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>702</catValu>
+        <labl><![CDATA[Singapore]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V15" name="IYCF" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[IYCF module is included]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM0: Is the IYCF module being included?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V16" name="MDCCONST" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[MDC Consent]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM1. Was consent given for conducting the interview?]]></qstnLit>
+        <ivuInstr><![CDATA[ENSURE THAT YOU HAVE INTRODUCED THE TEAM AND INFORMED THEM ABOUT THE INTERVIEW.]]></ivuInstr>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>3</catValu>
+        <labl><![CDATA[Absent]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V17" name="GPSCONST" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[GPS Consent]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM15A. Was consent given for taking the GPS coordinates of the household?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V18" name="HHGPS__Latitude" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[GPS Coordinates: Latitude]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM15B.Capture GPS]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V19" name="HHGPS__Longitude" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[GPS Coordinates: Longitude]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM15B.Capture GPS]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V20" name="HHGPS__Accuracy" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[GPS Coordinates: Accuracy]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM15B.Capture GPS]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V21" name="HHGPS__Altitude" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[GPS Coordinates: Altitude]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM15B.Capture GPS]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V22" name="HHGPS__Timestamp" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[GPS Coordinates: Timestamp]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM15B.Capture GPS]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V23" name="HHHSEX" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Household head sex]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM2. What is the sex of the household head?]]></qstnLit>
+        <ivuInstr><![CDATA[THE HOUSEHOLD HEAD IS THE PERSON RESPONSIBLE FOR MAKING THE DECISIONS FOR THE HOUSEHOLD AS A WHOLE. USE THE TERM AGREED UPON DURING THE TRAINING.]]></ivuInstr>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Male]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Female]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V24" name="HHHAGE" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[MDC Consent]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM3. What is the age of the household head (years)?]]></qstnLit>
+        <ivuInstr><![CDATA[YOU DO NOT NEED TO SEE PROOF OF AGE.]]></ivuInstr>
+      </qstn>
+      <catgry>
+        <catValu>998</catValu>
+        <labl><![CDATA[Don't know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V25" name="HHHCTRY" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Head country of origin]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM4. What is the country of origin of the household head? (OPTIONAL)]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>4</catValu>
+        <labl><![CDATA[Afghanistan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[Albania]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>10</catValu>
+        <labl><![CDATA[Antartica]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>12</catValu>
+        <labl><![CDATA[Algeria]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>16</catValu>
+        <labl><![CDATA[American Samoa]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>20</catValu>
+        <labl><![CDATA[Andorra]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>24</catValu>
+        <labl><![CDATA[Angola]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>28</catValu>
+        <labl><![CDATA[Antigua and Barbuda]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>31</catValu>
+        <labl><![CDATA[Azerbaijan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>32</catValu>
+        <labl><![CDATA[Argentina]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>36</catValu>
+        <labl><![CDATA[Australia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>40</catValu>
+        <labl><![CDATA[Austria]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>44</catValu>
+        <labl><![CDATA[Bahamas]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>48</catValu>
+        <labl><![CDATA[Bahrein]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>50</catValu>
+        <labl><![CDATA[Bangladesh]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>51</catValu>
+        <labl><![CDATA[Armenia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>52</catValu>
+        <labl><![CDATA[Barbados]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>56</catValu>
+        <labl><![CDATA[Belgium]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>60</catValu>
+        <labl><![CDATA[Bermuda]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>64</catValu>
+        <labl><![CDATA[Bhutan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>68</catValu>
+        <labl><![CDATA[Bolivia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>70</catValu>
+        <labl><![CDATA[Bosnia and Herzegovina]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>72</catValu>
+        <labl><![CDATA[Botswana]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>74</catValu>
+        <labl><![CDATA[Bouvet Island]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>76</catValu>
+        <labl><![CDATA[Brazil]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>84</catValu>
+        <labl><![CDATA[Belize]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>86</catValu>
+        <labl><![CDATA[British Indian Ocean Territory]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>90</catValu>
+        <labl><![CDATA[Solomon Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>92</catValu>
+        <labl><![CDATA[Virgin Islands, British]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>96</catValu>
+        <labl><![CDATA[Brunei Darussalam]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>100</catValu>
+        <labl><![CDATA[Bulgaria]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>104</catValu>
+        <labl><![CDATA[Myanmar]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>108</catValu>
+        <labl><![CDATA[Burundi]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>112</catValu>
+        <labl><![CDATA[Belarus]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>116</catValu>
+        <labl><![CDATA[Cambodia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>120</catValu>
+        <labl><![CDATA[Cameroon]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>124</catValu>
+        <labl><![CDATA[Canada]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>132</catValu>
+        <labl><![CDATA[Cape Verde]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>136</catValu>
+        <labl><![CDATA[Caiman Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>140</catValu>
+        <labl><![CDATA[Central African Republic]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>144</catValu>
+        <labl><![CDATA[Sri Lanka]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>148</catValu>
+        <labl><![CDATA[Chad]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>152</catValu>
+        <labl><![CDATA[Chile]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>156</catValu>
+        <labl><![CDATA[China]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>158</catValu>
+        <labl><![CDATA[Taiwan, Province of China]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>162</catValu>
+        <labl><![CDATA[Christmas Island]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>166</catValu>
+        <labl><![CDATA[Cocos (Keeling) Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>170</catValu>
+        <labl><![CDATA[Colombia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>174</catValu>
+        <labl><![CDATA[Comoros]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>175</catValu>
+        <labl><![CDATA[Mayotte]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>178</catValu>
+        <labl><![CDATA[Congo]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>180</catValu>
+        <labl><![CDATA[Congo, the Democratic Republic of the]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>184</catValu>
+        <labl><![CDATA[Cook Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>188</catValu>
+        <labl><![CDATA[Costa Rica]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>191</catValu>
+        <labl><![CDATA[Croatia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>192</catValu>
+        <labl><![CDATA[Cuba]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>196</catValu>
+        <labl><![CDATA[Cyprus]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>203</catValu>
+        <labl><![CDATA[Czech Republic]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>204</catValu>
+        <labl><![CDATA[Benin]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>208</catValu>
+        <labl><![CDATA[Denmark]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>212</catValu>
+        <labl><![CDATA[Dominica]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>214</catValu>
+        <labl><![CDATA[Dominican Republic]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>218</catValu>
+        <labl><![CDATA[Ecuador]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>222</catValu>
+        <labl><![CDATA[El Salvador]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>226</catValu>
+        <labl><![CDATA[Equatorial Guinea]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>231</catValu>
+        <labl><![CDATA[Ethiopia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>232</catValu>
+        <labl><![CDATA[Eritrea]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>233</catValu>
+        <labl><![CDATA[Estonia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>234</catValu>
+        <labl><![CDATA[Faroe Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>238</catValu>
+        <labl><![CDATA[Falkland Islands (Malvinas)]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>239</catValu>
+        <labl><![CDATA[South Georgia and the South Sandwich Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>242</catValu>
+        <labl><![CDATA[Fiji]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>246</catValu>
+        <labl><![CDATA[Finland]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>248</catValu>
+        <labl><![CDATA[Aland Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>250</catValu>
+        <labl><![CDATA[France]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>254</catValu>
+        <labl><![CDATA[French Guiana]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>258</catValu>
+        <labl><![CDATA[French Polynesia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>260</catValu>
+        <labl><![CDATA[French Southern Territories]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>262</catValu>
+        <labl><![CDATA[Djibouti]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>266</catValu>
+        <labl><![CDATA[Gabon]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>268</catValu>
+        <labl><![CDATA[Georgia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>270</catValu>
+        <labl><![CDATA[Gambia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>275</catValu>
+        <labl><![CDATA[Palestinian Territory, Occupied]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>276</catValu>
+        <labl><![CDATA[Germany]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>288</catValu>
+        <labl><![CDATA[Ghana]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>292</catValu>
+        <labl><![CDATA[Gibraltar]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>296</catValu>
+        <labl><![CDATA[Kiribati]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>300</catValu>
+        <labl><![CDATA[Greece]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>304</catValu>
+        <labl><![CDATA[Greenland]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>308</catValu>
+        <labl><![CDATA[Grenada]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>312</catValu>
+        <labl><![CDATA[Guadeloupe]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>316</catValu>
+        <labl><![CDATA[Guam]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>320</catValu>
+        <labl><![CDATA[Guatemala]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>324</catValu>
+        <labl><![CDATA[Guinea]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>328</catValu>
+        <labl><![CDATA[Guyana]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>332</catValu>
+        <labl><![CDATA[Haiti]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>334</catValu>
+        <labl><![CDATA[heard Islands and McDonald Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>336</catValu>
+        <labl><![CDATA[Holy See (Vatican City State)]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>340</catValu>
+        <labl><![CDATA[Honduras]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>344</catValu>
+        <labl><![CDATA[Hong Kong]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>348</catValu>
+        <labl><![CDATA[Hungary]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>352</catValu>
+        <labl><![CDATA[Iceland]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>356</catValu>
+        <labl><![CDATA[India]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>360</catValu>
+        <labl><![CDATA[Indonesia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>364</catValu>
+        <labl><![CDATA[Iran, Islamic Republic of]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>368</catValu>
+        <labl><![CDATA[Iraq]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>372</catValu>
+        <labl><![CDATA[Ireland]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>376</catValu>
+        <labl><![CDATA[Israel]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>380</catValu>
+        <labl><![CDATA[Italy]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>384</catValu>
+        <labl><![CDATA[Côte d’Ivoire]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>388</catValu>
+        <labl><![CDATA[Jamaica]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>392</catValu>
+        <labl><![CDATA[Japan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>398</catValu>
+        <labl><![CDATA[Kazakhstan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>400</catValu>
+        <labl><![CDATA[Jordan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>404</catValu>
+        <labl><![CDATA[Kenya]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>408</catValu>
+        <labl><![CDATA[Korea, Democratic People’s Republic of]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>410</catValu>
+        <labl><![CDATA[Korea, Republic of]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>414</catValu>
+        <labl><![CDATA[Kuwait]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>417</catValu>
+        <labl><![CDATA[Kyrgyzstan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>418</catValu>
+        <labl><![CDATA[Lao People’s Democratic Republic]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>422</catValu>
+        <labl><![CDATA[Lebanon]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>426</catValu>
+        <labl><![CDATA[Lesotho]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>428</catValu>
+        <labl><![CDATA[Latvia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>430</catValu>
+        <labl><![CDATA[Liberia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>434</catValu>
+        <labl><![CDATA[Libyan Arab Jamahiriya]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>438</catValu>
+        <labl><![CDATA[Liechtenstein]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>440</catValu>
+        <labl><![CDATA[Lithuania]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>442</catValu>
+        <labl><![CDATA[Luxembourg]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>446</catValu>
+        <labl><![CDATA[Macao]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>450</catValu>
+        <labl><![CDATA[Madagascar]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>454</catValu>
+        <labl><![CDATA[Malawi]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>458</catValu>
+        <labl><![CDATA[Malaysia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>462</catValu>
+        <labl><![CDATA[Maldives]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>466</catValu>
+        <labl><![CDATA[Mali]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>470</catValu>
+        <labl><![CDATA[Malta]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>474</catValu>
+        <labl><![CDATA[Martinique]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>478</catValu>
+        <labl><![CDATA[Mauritania]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>480</catValu>
+        <labl><![CDATA[Mauritius]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>484</catValu>
+        <labl><![CDATA[Mexico]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>492</catValu>
+        <labl><![CDATA[Monaco]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>496</catValu>
+        <labl><![CDATA[Mongolia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>498</catValu>
+        <labl><![CDATA[Moldova]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>499</catValu>
+        <labl><![CDATA[Montenegro]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>500</catValu>
+        <labl><![CDATA[Montserrat]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>504</catValu>
+        <labl><![CDATA[Morocco]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>508</catValu>
+        <labl><![CDATA[Mozambique]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>512</catValu>
+        <labl><![CDATA[Oman]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>516</catValu>
+        <labl><![CDATA[Namibia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>520</catValu>
+        <labl><![CDATA[Nauru]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>524</catValu>
+        <labl><![CDATA[Nepal]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>528</catValu>
+        <labl><![CDATA[Netherlands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>530</catValu>
+        <labl><![CDATA[Netherlands Antilles]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>533</catValu>
+        <labl><![CDATA[Aruba]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>540</catValu>
+        <labl><![CDATA[New Caledonia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>548</catValu>
+        <labl><![CDATA[Vanuatu]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>554</catValu>
+        <labl><![CDATA[New Zealand]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>558</catValu>
+        <labl><![CDATA[Nicaragua]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>562</catValu>
+        <labl><![CDATA[Niger]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>566</catValu>
+        <labl><![CDATA[Nigeria]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>570</catValu>
+        <labl><![CDATA[Niue]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>574</catValu>
+        <labl><![CDATA[Norfolk Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>578</catValu>
+        <labl><![CDATA[Norway]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>580</catValu>
+        <labl><![CDATA[Northern Mariana Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>581</catValu>
+        <labl><![CDATA[United States Minor Outlying Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>583</catValu>
+        <labl><![CDATA[Micronesia, Federated States of]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>584</catValu>
+        <labl><![CDATA[Marshall Islands]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>585</catValu>
+        <labl><![CDATA[Palau]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>586</catValu>
+        <labl><![CDATA[Pakistan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>591</catValu>
+        <labl><![CDATA[Panama]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>598</catValu>
+        <labl><![CDATA[Papua New Guinea]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>600</catValu>
+        <labl><![CDATA[Paraguay]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>604</catValu>
+        <labl><![CDATA[Peru]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>608</catValu>
+        <labl><![CDATA[Philippines]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>612</catValu>
+        <labl><![CDATA[Pitcairn]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>616</catValu>
+        <labl><![CDATA[Poland]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>620</catValu>
+        <labl><![CDATA[Portugal]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>624</catValu>
+        <labl><![CDATA[Guinea Bissau]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>626</catValu>
+        <labl><![CDATA[Timor Leste]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>630</catValu>
+        <labl><![CDATA[Puerto Rico]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>634</catValu>
+        <labl><![CDATA[Qatar]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>638</catValu>
+        <labl><![CDATA[Réunion]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>642</catValu>
+        <labl><![CDATA[Romania]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>643</catValu>
+        <labl><![CDATA[Russian Federation]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>646</catValu>
+        <labl><![CDATA[Rwanda]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>652</catValu>
+        <labl><![CDATA[Saint Barthélemy]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>654</catValu>
+        <labl><![CDATA[Saint Helena]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>659</catValu>
+        <labl><![CDATA[Saint Kitts and Nevis]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>660</catValu>
+        <labl><![CDATA[Anguilla]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>662</catValu>
+        <labl><![CDATA[Saint Lucia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>663</catValu>
+        <labl><![CDATA[Saint Martin (French part)]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>666</catValu>
+        <labl><![CDATA[Saint Pierre and Miquelon]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>670</catValu>
+        <labl><![CDATA[Saint Vincent and the Grenadines]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>674</catValu>
+        <labl><![CDATA[San Marino]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>678</catValu>
+        <labl><![CDATA[Sao Tome and Principe]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>682</catValu>
+        <labl><![CDATA[Saudi Arabia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>686</catValu>
+        <labl><![CDATA[Senegal]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>688</catValu>
+        <labl><![CDATA[Serbia]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>690</catValu>
+        <labl><![CDATA[Seychelles]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>694</catValu>
+        <labl><![CDATA[Sierra Leone]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>702</catValu>
+        <labl><![CDATA[Singapore]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V26" name="HHHHOST" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Is head country national]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM5. Is the household head a national of %COUNTRY%?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V27" name="HHHDIP" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Is head displaced]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM6. Has the household head been forced to move from his/her place of origin?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V28" name="HHHREFUG" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Is head a refugee]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM7. Has the household head been forced to move from his/her country of origin to %COUNTRY%?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V29" name="NAME__0" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:0]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V30" name="NAME__1" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:1]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V31" name="NAME__2" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:2]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V32" name="NAME__3" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:3]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V33" name="NAME__4" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:4]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V34" name="NAME__5" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:5]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V35" name="NAME__6" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:6]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V36" name="NAME__7" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:7]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V37" name="NAME__8" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:8]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V38" name="NAME__9" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:9]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V39" name="NAME__10" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:10]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V40" name="NAME__11" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:11]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V41" name="NAME__12" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:12]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V42" name="NAME__13" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:13]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V43" name="NAME__14" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:14]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V44" name="NAME__15" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:15]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V45" name="NAME__16" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:16]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V46" name="NAME__17" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:17]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V47" name="NAME__18" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:18]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V48" name="NAME__19" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:19]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V49" name="NAME__20" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:20]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V50" name="NAME__21" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:21]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V51" name="NAME__22" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:22]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V52" name="NAME__23" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:23]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V53" name="NAME__24" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:24]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V54" name="NAME__25" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:25]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V55" name="NAME__26" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:26]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V56" name="NAME__27" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:27]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V57" name="NAME__28" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:28]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V58" name="NAME__29" files="F1" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Name of household member:29]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM9. Name of household member]]></qstnLit>
+        <ivuInstr><![CDATA[ONLY WRITE THE FIRST NAME
+
+ASK INTERVIEWEE IF THOSE ARE ALL THE MEMBERS IN THE HOUSEHOLD AND THAT NO ONE IS MISSING]]></ivuInstr>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V59" name="ARRIVE" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Arrival tie]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM13. Did all household members arrive to %CAMPNAME%/%COUNTRY% at the same time?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V60" name="ARRIDATE" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Arrival date]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM14. When did the household arrive to %CAMPNAME%/%COUNTRY%?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[1 month ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[2 months ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>3</catValu>
+        <labl><![CDATA[3 months ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>4</catValu>
+        <labl><![CDATA[4 months ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>5</catValu>
+        <labl><![CDATA[5 months ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>6</catValu>
+        <labl><![CDATA[6 months ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>7</catValu>
+        <labl><![CDATA[7 months ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[8 months ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>9</catValu>
+        <labl><![CDATA[9 months ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>10</catValu>
+        <labl><![CDATA[10 months ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>11</catValu>
+        <labl><![CDATA[11 months ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>12</catValu>
+        <labl><![CDATA[12 months ago [INSERT MONTH]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>13</catValu>
+        <labl><![CDATA[1-2 years ago]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>14</catValu>
+        <labl><![CDATA[2-3 years ago]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>15</catValu>
+        <labl><![CDATA[&gt;3 years ago]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>16</catValu>
+        <labl><![CDATA[Other [TO BE ADAPTED]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>98</catValu>
+        <labl><![CDATA[Don’t know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V61" name="TOTU5" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTU5]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &lt;= 4)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V62" name="TOTWM" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTWM]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;(x.HHMAGE &gt;= 15 &amp;&amp; x.HHMAGE &lt;= 49) &amp;&amp; (x.HHMSEX == 2))]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V63" name="TOTPREG" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTPREG]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;(x.HHMAGE &gt;= 15 &amp;&amp; x.HHMAGE &lt;= 49) &amp;&amp; (x.HHMSEX == 2) &amp;&amp; x.HHMPREG == 1)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V64" name="MSNGAGE" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[MSNGAGE]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;!x.HHMAGE.InRange(0,990))]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V65" name="MSNGSEX" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[MSNGSEX]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;!x.HHMSEX.InRange(1,2))]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V66" name="TOTFU2" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTFU2]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &lt;= 1 &amp;&amp; x.HHMSEX == 2)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V67" name="TOTMU2" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTMU2]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &lt;= 1 &amp;&amp; x.HHMSEX == 1)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V68" name="TOTU2" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTU2]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TOTFU2 + TOTMU2]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V69" name="TOTFU5" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTFU5]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &lt;= 4 &amp;&amp; x.HHMSEX == 2)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V70" name="TOTMU5" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTMU5]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &lt;= 4 &amp;&amp; x.HHMSEX == 1)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V71" name="TOTU5_2" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTU5_2]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TOTFU5 + TOTMU5]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V72" name="TOTF514" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTF514]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &gt;= 5 &amp;&amp; x.HHMAGE &lt;= 14 &amp;&amp; x.HHMSEX == 2)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V73" name="TOTM514" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTM514]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &gt;= 5 &amp;&amp; x.HHMAGE &lt;= 14 &amp;&amp; x.HHMSEX == 1)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V74" name="TOT514" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOT514]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TOTF514 + TOTM514]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V75" name="TOTFU15" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTFU15]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &lt;= 14 &amp;&amp; x.HHMSEX == 2)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V76" name="TOTMU15" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTMU15]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &lt;= 14 &amp;&amp; x.HHMSEX == 1)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V77" name="TOTU15" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTU15]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TOTFU15 + TOTMU15]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V78" name="TOTF1564" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTF1564]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &gt;= 15 &amp;&amp; x.HHMAGE &lt;= 64 &amp;&amp; x.HHMSEX == 2)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V79" name="TOTM1564" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTM1564]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &gt;= 15 &amp;&amp; x.HHMAGE &lt;= 64 &amp;&amp; x.HHMSEX == 1)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V80" name="TOT1564" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOT1564]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TOTF1564 + TOTM1564]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V81" name="TOTF65OLD" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTF65OLD]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &gt;= 65 &amp;&amp; x.HHMSEX == 2)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V82" name="TOTM65OLD" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTM65OLD]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &gt;= 65 &amp;&amp; x.HHMSEX == 1)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V83" name="TOT65OLD" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOT65OLD]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TOTF65OLD + TOTM65OLD]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V84" name="HHFSIZE" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HHFSIZE]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &gt;= 0 &amp;&amp; x.HHMSEX == 2)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V85" name="HHMSIZE" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HHMSIZE]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &gt;= 0 &amp;&amp; x.HHMSEX == 1)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V86" name="HHSIZE" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HHSIZE]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[NAME.Length]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V87" name="HHASSIST" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Household assistance level]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS2. What is your household’s assistance category?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Category A]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Category B]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>3</catValu>
+        <labl><![CDATA[Category C]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>4</catValu>
+        <labl><![CDATA[Category D]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>5</catValu>
+        <labl><![CDATA[Category E]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>6</catValu>
+        <labl><![CDATA[Other]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[Don't know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V88" name="FOODASS" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Household food assistance]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS3. Does your household receive food assistance (general in-kind food distribution and/or cash grants and/or food vouchers)?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V89" name="YNOFOODA" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Why HH not receiving food ass.]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS4. Why do you not have access to the food assistance programmes?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Ration card and/or cash grants and/or food voucher not given even if eligible]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Not registered]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>3</catValu>
+        <labl><![CDATA[Registered but determined not eligible]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>6</catValu>
+        <labl><![CDATA[Other]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[Don’t know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V90" name="GFDLAST" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Food from last cycle last]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS5. How many days did the food from the general in-kind food distribution from the [INSERT] cycle of [INSERT LAST CYCLE MONTH] last?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V91" name="CASH" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Household receives cash]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS6. Does your household receive cash grants to meet basic needs?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V92" name="CASHSPNT__1" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Food]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V93" name="CASHSPNT__2" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Water]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V94" name="CASHSPNT__3" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Hygiene items, clothes, shoes]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V95" name="CASHSPNT__4" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Health costs (including medicines)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V96" name="CASHSPNT__5" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Rent, shelter repair, household items (e .g . mattress, blanket, jerrycan), utilities and bills (e .g . electricity, water bills, phone calling credit)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V97" name="CASHSPNT__6" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Firewood/fuel for cooking or heating]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V98" name="CASHSPNT__7" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Assets for a livelihood activity (e .g . seeds, tools, farming, fishing, petty trade, etc .)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V99" name="CASHSPNT__8" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Debt repayment]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V100" name="CASHSPNT__9" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Save some money or gave to other family members, relatives, friends]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V101" name="CASHSPNT__10" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Education (e .g . school fees, uniform, books)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V102" name="CASHSPNT__96" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Other]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V103" name="CASHSPNT__98" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[How spent cash grant:Don’t know]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS7. How did you spend the cash grants you received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION]?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V104" name="VOUCHER" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Household receives cash]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS8. Does your household receive a food voucher [INSERT LOCAL NAME OF FOOD VOUCHER] for general food needs?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V105" name="SELLVOU" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Household receives cash]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS9. Did you sell any of the vouchers or products accessed with food vouchers received in [INSERT LAST CYCLE MONTH OR DISTRIBUTION] to access other goods and/or services?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V106" name="NEEDSNOT__1" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Food]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V107" name="NEEDSNOT__2" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Water]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V108" name="NEEDSNOT__3" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Hygiene items, clothes, shoes]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V109" name="NEEDSNOT__4" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Health costs (including medicines)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V110" name="NEEDSNOT__5" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Rent, shelter repair, household items (e .g . mattress, blanket, jerrycan), utilities and bills (e .g . electricity, water bills, phone calling credit)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V111" name="NEEDSNOT__6" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Firewood/fuel for cooking or heating]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V112" name="NEEDSNOT__7" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Assets for a livelihood activity (e .g . seeds, tools, farming, fishing, petty trade, etc .)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V113" name="NEEDSNOT__8" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Debt repayment]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V114" name="NEEDSNOT__9" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Save some money or support other family members, relatives, friends]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V115" name="NEEDSNOT__10" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Education (e .g . school fees, uniform, books)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V116" name="NEEDSNOT__11" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:All basic needs are met]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V117" name="NEEDSNOT__96" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Other]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V118" name="NEEDSNOT__98" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HH needs not met:Don’t know]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS10. Which of your household’s basic needs can you not meet?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V119" name="HHFUEL" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[cooking fuel]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS11. What cooking fuel does your household usually use?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Wood]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Charcoal]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>3</catValu>
+        <labl><![CDATA[Kerosene]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>4</catValu>
+        <labl><![CDATA[Biogas]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>5</catValu>
+        <labl><![CDATA[Liquid petroleum gas (LPG)]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>6</catValu>
+        <labl><![CDATA[Ethanol]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>7</catValu>
+        <labl><![CDATA[Briquettes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>96</catValu>
+        <labl><![CDATA[Other]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>98</catValu>
+        <labl><![CDATA[Don’t know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V120" name="FUEL" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Receives cook fuel assistance]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS12. Does your household receive cooking fuel assistance?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V121" name="FUELLAST" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Fuel from last cycle last]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS13. How many days did the fuel from the [INSERT] cycle of [INSERT LAST CYCLE MONTH] last?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V122" name="SCHOOL" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Needed to stop school]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS14. In the past 4 weeks, have you or anyone in your household needed to stop a child from attending school?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V123" name="SELLLIV" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Needed to sell assets]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS15. In the past 4 weeks, have you or anyone in your household needed to sell any assets that would not have normally been sold in order to buy food or basic goods (e .g . sold items such as a car, motorbike, plough, sewing machine, tools, seed stock, livestock, productive land)?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V124" name="BEG" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Needed to stop school]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS16. In the past 4 weeks, have you or anyone in your household needed to ask for money from strangers (begging)?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V125" name="SHELTER" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Needed to move shelter]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS17. In the past 4 weeks, have you or anyone in your household needed to move to a poorer quality shelter?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V126" name="CHILDLAB" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Needed to engage child labour]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS18. In the past 4 weeks, have you or anyone in your household needed to send household members under the age of 16 to work?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V127" name="WORKAWAY" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Needed to work far away]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS19. In the past 4 weeks, have you or anyone in your household needed to send a member of the household to work far away?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V128" name="RISKYACT" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Needed to stop school]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS20. In the past 4 weeks, have you or anyone in your household needed to  engage in activities for money or items that you feel puts you or other members of your household at risk of harm (e .g . illegal activities like hunting, fishing, survival sex, drug dealing, early marriage, joining armed groups, etc .)?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V129" name="RENTDEBT" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Needed to skip rent]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS21. In the past 4 weeks, have you or anyone in your household needed to skip paying rent / debt repayments to meet other needs?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V130" name="LOANBRW" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Needed to take out loans]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS22. In the past 4 weeks, have you or anyone in your household needed to take out new loans or borrowed money?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V131" name="REDUCE" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Needed to reduce expenditure]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS23. In the past 4 weeks, have you or anyone in your household needed to reduce expenditure on hygiene items, water, baby items, health or education in order to meet household food needs?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V132" name="LESSEXP" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Less expensive food]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS24. In the past 7 days, how many times did your household rely on less preferred and/or less expensive food due to lack of food or money to buy food?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V133" name="BRW" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Borrow food]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS25. In the past 7 days, how many times did your household borrow food or rely on help from a friend or relative due to lack of food or money to buy food?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V134" name="LESSMEAL" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Reduce number meals]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS26. In the past 7 days, how many times did your household reduce the number of meals eaten in a day due to lack of food or money to buy food?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V135" name="REDMEAL" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Reduced portion size]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS27. In the past 7 days, how many times did your household limit portion sizes at mealtime due to lack of food or money to buy food?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V136" name="REDADULT" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Reduced adult food]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS28. In the past 7 days, how many times did your household reduce consumption by adults so children could eat, due to lack of food or money to buy food?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V137" name="CRLROTU" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten cereals roots or tubers]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.1. In the past 7 days, how many days did your household eat any [INSERT CEREALS LOCALLY AVAILABLE] or any foods made from these such as [INSERT LOCAL FOODS). Or any [INSERT WHITE ROOTS AND TUBERS LOCALLY AVAILABLE] or any foods made from roots such as [INSERT LOCAL FOODS]. Or any [INSERT OTHER STARCHY FOODS LOCALLY AVAILABLE]]]></qstnLit>
+        <ivuInstr><![CDATA[READ THE LIST OF FOODS AND DO NOT PROBE. ONLY RECORD THE CONSUMPTION OF SIGNIFICANT QUANTITIES OF FOOD BY THE HOUSEHOLD . WRITE ‘0’ IF NOT CONSUMED IN THE LAST 7 DAYS]]></ivuInstr>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V138" name="PULSE" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten legumes nuts or seeds]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.2. In the past 7 days, how many days did your household eat any [INSERT LEGUMES, NUTS AND SEEDS LOCALLY AVAILABLE] or any foods made from these such as [INSERT LOCAL FOODS]]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V139" name="MILKFS" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten milk products]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.3. In the past 7 days, how many days did your household eat any [INSERT MILK AND MILK PRODUCTS LOCALLY AVAILABLE]]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V140" name="PROT" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten protein]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.4. In the past 7 days, how many days did your household eat any milk, fish or eggs?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V141" name="FLSHMT" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten flesh meats]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.4.1. In the past 7 days, how many days did your household eat any [INSERT FLESH MEAT LOCALLY AVAILABLE]]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V142" name="ORGMT" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten organ meat]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.4.2. In the past 7 days, how many days did your household eat any [INSERT ORGAN MEAT OR BLOOD-BASED FOODS LOCALLY AVAILABLE] (]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V143" name="FISHSF" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten fish]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.4.3. In the past 7 days, how many days did your household eat any [INSERT FRESH, DRIED OR CANNED FISH OR SHELLFISH LOCALLY AVAILABLE]]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V144" name="EGGS" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten fish]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.4.4. In the past 7 days, how many days did your household eat any eggs from [INSERT EGGS LOCALLY AVAILABLE]]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V145" name="VEGL" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten vegetables]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.5. In the past 7 days, how many days did your household eat any [INSERT ANY VEGETABLES AND LEAVES LOCALLY AVAILABLE]]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V146" name="VITAV" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten vitamin a vegetables]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.5.1. In the past 7 days, how many days did your household eat any [INSERT VITAMIN A RICH VEGETABLES AND TUBERS LOCALLY AVAILABLE]]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V147" name="GREENV" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten green vegetables]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.5.2. In the past 7 days, how many days did your household eat any [INSERT DARK GREEN LEAFY VEGETABLES LOCALLY AVAILABLE INLCUDING WILD FORMS AND VITAMIN A RICH LEAVES]]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V148" name="FRT" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten fruits]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.6. In the past 7 days, how many days did your household eat any [INSERT ANY FRUITS LOCALLY AVAILABLE INCLUDING WILD FRUITS], and 100% fruit juice made from these]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V149" name="VITAFRT" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten vitamine a fruits]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.6.1. In the past 7 days, how many days did your household eat any [INSERT VITAMIN A RICH FRUITS LOCALLY AVAILABLE], and 100% fruit juice made from these]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V150" name="FATS" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten fats]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.7. In the past 7 days, how many days did your household eat any [INSERT OILS AND FATS LOCALLY AVAILABLE] added to food or used for cooking]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V151" name="SWTS" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten sweets]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.8. In the past 7 days, how many days did your household eat any [INSERT SWEETS, SWEETENED SODA OR JUICE DRINKS AND SUGARY FOODS LOCALLY AVAILABLE]]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V152" name="SPICE" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten spices]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.9. In the past 7 days, how many days did your household eat any [INSERT SPICES, CONDIMENTS AND BEVERAGES LOCALLY AVAILABLE]]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V153" name="SPENUTF" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Eaten special nutrition food]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS29.10. In the past 7 days, how many days did your household eat any [INSERT SPECIALIZED NUTRITIOUS FOODS AVAILABLE]]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V154" name="FOODSOU__1" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Sources of food:Purchase (using cash grants and/or with their own cash)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS30. How was this food acquired?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V155" name="FOODSOU__2" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Sources of food:Own production (crops, livestock, fishing/hunting, gathering)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS30. How was this food acquired?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V156" name="FOODSOU__3" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Sources of food:Traded goods/ services, barter]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS30. How was this food acquired?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V157" name="FOODSOU__4" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Sources of food:Borrowed (loan/credit from traders)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS30. How was this food acquired?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V158" name="FOODSOU__5" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Sources of food:Receive as gift (from family relatives or friend/neighbor]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS30. How was this food acquired?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V159" name="FOODSOU__6" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Sources of food:In-kind or voucher based food assistance]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS30. How was this food acquired?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V160" name="FOODSOU__96" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Sources of food:Other]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS30. How was this food acquired?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V161" name="FOODSOU__98" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Sources of food:Don’t know]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[FS30. How was this food acquired?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V162" name="HHIRS" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[House sprayed with insecticide]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN6. Did you have your house sprayed with insecticide in an indoor residual spray campaign in the past 6/12 months?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V163" name="MOSNETS" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Household has mosquito nets]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN7. Do you have mosquito bed nets in this household that can be used while sleeping?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V164" name="NUMNETS" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[House sprayed with insecticide]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN8. How many of these mosquito bed nets that can be used while sleeping does your household have?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V165" name="TOTSLPNT" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTSLPNT]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.SLPNET == 1)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V166" name="TOTCHNT" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTCHNT]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.SLPNET == 1 &amp;&amp; x.HHMAGE &lt; 5)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V167" name="TOTPWNT" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTPWNT]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.SLPNET == 1 &amp;&amp; x.HHMPREG == 1)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V168" name="TOTSLPLN" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTSLPLN]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.SLPBRAND1.InRange(1,94))]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V169" name="TOTCHLN" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTCHLN]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMAGE &lt; 5 &amp;&amp; x.SLPBRAND1.InRange(1,94))]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V170" name="TOTPWLN" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[TOTPWLN]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HHMEMBERS.Count(x=&gt;x.HHMPREG == 1 &amp;&amp; x.SLPBRAND1.InRange(1,94))]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V171" name="SOURCE" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[drinking water source]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WS3. What is the principal source of drinking water for members of your household?]]></qstnLit>
+        <ivuInstr><![CDATA[SELECT ONE BUT DO NOT PROMPT WITH RESPONSES 
+CONSIDER DRINKING WATER ONLY]]></ivuInstr>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Public tap/standpipe]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Handpumps/boreholes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>3</catValu>
+        <labl><![CDATA[Water seller/kiosks]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>4</catValu>
+        <labl><![CDATA[Piped connection to house (or neighbour’s house)]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>5</catValu>
+        <labl><![CDATA[Protected spring]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>6</catValu>
+        <labl><![CDATA[Bottled water, water sachets]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>7</catValu>
+        <labl><![CDATA[Tanker trucks]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[Unprotected hand-dug well]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>9</catValu>
+        <labl><![CDATA[Surface water (lake, pond, dam, river)]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>10</catValu>
+        <labl><![CDATA[Unprotected spring]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>11</catValu>
+        <labl><![CDATA[Rain water collection]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>96</catValu>
+        <labl><![CDATA[Other]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>98</catValu>
+        <labl><![CDATA[Don’t know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V172" name="TOILET" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[where members defecate]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WS4. Where do you and your household members (excluding children under 5) usually go to defecate?]]></qstnLit>
+        <ivuInstr><![CDATA[SELECT ONE BUT DO NOT PROMPT WITH RESPONSES]]></ivuInstr>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Household latrine]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Communal latrine]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>3</catValu>
+        <labl><![CDATA[Open defecation]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>4</catValu>
+        <labl><![CDATA[Plastic bag]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>5</catValu>
+        <labl><![CDATA[Bucket toilet]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>6</catValu>
+        <labl><![CDATA[Other]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[Don’t know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V173" name="SOAP" files="F1" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[soap observed]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WS5. Please show me the soap you have in the household]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Presented within 1 minute]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Not presented within 1 minute/No soap]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V174" name="CONTAINER" files="F1" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Water containers]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WS6. How many containers do you have to collect or store water for domestic purposes for your house? Please show me all of them one by one]]></qstnLit>
+        <ivuInstr><![CDATA[RECORD ONE BY ONE  CHECK FOR ALL OF THE CONTAINERS  DO NOT INCLUDE BROKEN, LEAKING, OR NON-FUNCTIONAL CONTAINERS]]></ivuInstr>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V175" name="BEDNETS__id" files="F2" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Id in BEDNETS]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V176" name="interview__key" files="F2" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Interview key (identifier in XX-XX-XX-XX format)]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V177" name="NETOBS" files="F2" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Bed observed]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN9. Can the bed net be observed?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V178" name="NETBRAND" files="F2" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Net brand name]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN10. What is the brand of the net observed?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[DAWAPLUS]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[DURANET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>3</catValu>
+        <labl><![CDATA[INTERCEPTOR]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>4</catValu>
+        <labl><![CDATA[LIFENET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>5</catValu>
+        <labl><![CDATA[MAGNET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>6</catValu>
+        <labl><![CDATA[MIRANET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>7</catValu>
+        <labl><![CDATA[OLYSET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[PANDANET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>9</catValu>
+        <labl><![CDATA[PERMANET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>10</catValu>
+        <labl><![CDATA[ROYALSENTRY]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>11</catValu>
+        <labl><![CDATA[SAFENET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>12</catValu>
+        <labl><![CDATA[VEERALIN]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>13</catValu>
+        <labl><![CDATA[YALE]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>14</catValu>
+        <labl><![CDATA[YORKOOL]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>15</catValu>
+        <labl><![CDATA[Insecticide treated net (ITN) #1]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>16</catValu>
+        <labl><![CDATA[Insecticide treated net (ITN) #2]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>17</catValu>
+        <labl><![CDATA[Insecticide treated net (ITN) #3]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>96</catValu>
+        <labl><![CDATA[Other (please specify)]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>98</catValu>
+        <labl><![CDATA[Unidentifiable / Don’t know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V179" name="BRANDOTH" files="F2" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Other net brand name]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN11: Please specify brand of bed net]]></qstnLit>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V180" name="interview__id" files="F2" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Unique 32-character long identifier of the interview]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V181" name="WATERCONTAINERS__id" files="F3" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Id in WATERCONTAINERS]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V182" name="interview__key" files="F3" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Interview key (identifier in XX-XX-XX-XX format)]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V183" name="TYPE" files="F3" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[type of water container]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WS7. What is the type of container?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Jerrycan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Bucket]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>3</catValu>
+        <labl><![CDATA[Basin]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>4</catValu>
+        <labl><![CDATA[Bottle]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>5</catValu>
+        <labl><![CDATA[Saucepan]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>6</catValu>
+        <labl><![CDATA[Drums]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>96</catValu>
+        <labl><![CDATA[Other]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V184" name="LITER" files="F3" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Water container volume]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WS8. What is the volume of the container (Liters)?]]></qstnLit>
+        <ivuInstr><![CDATA[ENTER THE AMOUNT OF LITRES THIS CONTAINER CAN HOLD]]></ivuInstr>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V185" name="PROTECTED1" files="F3" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Water container covered]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WS9. Is the container covered?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V186" name="NUMTRIPS" files="F3" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Number of trips with container]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WS10. Number of journeys made with container for the collection of water for domestic purposes yesterday?]]></qstnLit>
+        <ivuInstr><![CDATA[RECORD ‘NONE’ IF HOUSEHOLD DID NOT FILL IT YESTERDAY]]></ivuInstr>
+      </qstn>
+      <catgry>
+        <catValu>0</catValu>
+        <labl><![CDATA[NONE]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V187" name="interview__id" files="F3" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Unique 32-character long identifier of the interview]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V188" name="CHILD__id" files="F4" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Id in CHILD]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V189" name="interview__key" files="F4" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Interview key (identifier in XX-XX-XX-XX format)]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V190" name="CHLOWRANGE" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[CHLOWRANGE]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IYCF == 1 ? 0 : 6]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V191" name="XDOBK" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Official age documentation]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH5. Do you have an official age documentation for %CHILD%?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V192" name="BIRTHDAT" files="F4" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[D.O.B of Child]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH6. What is %CHILD%’s date of birth (Day/Month/Year)]]></qstnLit>
+      </qstn>
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V193" name="MONTHS" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Age of child months]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH7. What is the age of %CHILD% in months?]]></qstnLit>
+        <ivuInstr><![CDATA[SINCE NO AGE DOCUMENTATION IS AVAILABLE, ESTIMATE AGE USING A LOCAL EVENTS CALENDAR]]></ivuInstr>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V194" name="MONTHSX" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[MONTHSX]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[MONTHS != null ? MONTHS : ((new DateTime(SURVDAT.Value.Date.Year, BIRTHDAT.Value.Month, BIRTHDAT.Value.Day)) &lt;= (new DateTime(SURVDAT.Value.Date.Year, SURVDAT.Value.Month, SURVDAT.Value.Day)) ? 
+((SURVDAT.Value.Date.Year * 12 + SURVDAT.Value.Date.Month)-(BIRTHDAT.Value.Year * 12 + BIRTHDAT.Value.Month))  : 
+((SURVDAT.Value.Date.Year * 12 + SURVDAT.Value.Date.Month)-(BIRTHDAT.Value.Year * 12 + (BIRTHDAT.Value.Month+1))))]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V195" name="CHELIGIBLE" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[CHELIGIBLE]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[MONTHSX.InRange(CHLOWRANGE, 59)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V196" name="CHCONST" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Consent for CH questionnaire]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH2. Was consent given for conducting the interview and the measurements?]]></qstnLit>
+        <ivuInstr><![CDATA[Ensure that you have introduced the team and informed them about the interview and the measurements 
+
+If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V197" name="CHARRIVE" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child arrive camp]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH8. Does %CHILD% arrive to %CAMPNAME% before or after [INSERT THE EVENT RESPONSIBLE FOR THE INFLUX OF REFUGEES]?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Arrived before [EVENT]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Arrived after [EVENT]]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[Don't know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V198" name="CHPRES" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child present]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH9. Is %CHILD% currently present in the household?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V199" name="WEIGHT" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Weight of child]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH10. %CHILD%’s weight in kilograms (±0.1kg)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V200" name="CLOTHES" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child wearing clothes]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH11. Was %CHILD% dressed with clothes for the weight measurement?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V201" name="HEIGHT" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Height of child]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH12. %CHILD%’s length/height in cm (±0.1cm)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V202" name="HEIGHTX" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HEIGHTX]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HEIGHT &lt;= 45 ? 45 : HEIGHT &gt; 120 ? 120 : HEIGHT]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V203" name="MEASURE" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child standing or lying down]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH13. Was %CHILD% measured lying down or standing up?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Child lying down]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Child standing up]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V204" name="EDEMA" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child have edema]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH14. Clinical examination: Does %CHILD% present bilateral pitting oedema?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V205" name="MUAC" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child MUAC]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH15A. %CHILD%’s middle upper arm circumference (MUAC) in mm (±1mm) or cm (±0.1cm)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V206" name="MUACUNIT" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child MUAC unit]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH15B. Unit of measurement for CH15A:]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[centimeters]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[millimeters]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V207" name="MUACX" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[MUACX]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[MUACUNIT == 1 ? MUAC * 10 : MUAC]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V208" name="ENROLX" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child enrolled malnutrition programme]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH16A. Is %CHILD% currently being treated in for malnutrition in any nutrition programme?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V209" name="ENROL__1" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Malnutrition programme:Programme 1]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH16B. Which nutrition programme is %CHILD% currently being treated in for malnutrition?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V210" name="ENROL__2" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Malnutrition programme:Programme 2]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH16B. Which nutrition programme is %CHILD% currently being treated in for malnutrition?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V211" name="ENROL__3" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Malnutrition programme:Programme 3]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH16B. Which nutrition programme is %CHILD% currently being treated in for malnutrition?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V212" name="BSFP" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child BSFP]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH17. Is %CHILD% currently enrolled in the BSFP?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V213" name="MEASLES" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Vaxxed for measles]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH18. Has %CHILD% been vaccinated against measles?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V214" name="VITA" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Vit A capsule]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH19. Has %CHILD% received a vitamin A capsule in the past 6 months?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V215" name="DEWORM" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child given dewormer]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH20. Was %CHILD% given any drug for intestinal worms in the last six months?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V216" name="DIAR" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child given dewormer]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH21. Has %CHILD% had diarrhoea in the past 2 weeks?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V217" name="DIARORS" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child given dewormer]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH22. Did you give [INSERT LOCAL NAME FOR WHO ORS] to %rostertitle% when s/he had diarrhoea?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V218" name="DIARZINC" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child given dewormer]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH23. Did you give zinc tablets or syrup to  %CHILD% when s/he had diarrhoea?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V219" name="WFZ" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[WFZ]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[MONTHSX.InRange(0,24) ? Math.Round(ZScore.Wfl(HEIGHTX, HHMSEX == 1, WEIGHT),2) : Math.Round(ZScore.Wfh(HEIGHTX, HHMSEX == 1, WEIGHT),2)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V220" name="HBUNIT" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HemoCue unit of meas.]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH24. Units of measurement of your HemoCue device (g/dL or g/L)]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[g/dL]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[g/L]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V221" name="CHHB" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child Hb measure]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[CH25. %CHILD%’s haemoglobin (Hb) in g/dL (±0.1 g/dL) or in g/L (±1g/L)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V222" name="HBGDL" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HBGDL]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HBUNIT == 1 ? CHHB : CHHB / 10]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V223" name="REFANEM" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[REFANEM]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[HBGDL.InRange(0,7)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V224" name="EVERBF" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child breastfed]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF1. Has %CHILD% ever been breastfed?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V225" name="INITBF" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child breastfed start]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF2. How long after birth did you first put %CHILD% to the breast?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Less than one hour]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Between 1 and 23 hours]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>3</catValu>
+        <labl><![CDATA[More than 24 hours]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[Don’t know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V226" name="YESTBF" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child breastfed]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF3. Was %CHILD% breastfed yesterday during the day or at night?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V227" name="WATER" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received plain water]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF4A. Yesterday, during the day or at night, did %CHILD% receive Plain water?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V228" name="INFORM" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received infant formula]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF4B. Yesterday, during the day or at night, did %CHILD% receive Infant formula?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V229" name="MILK" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[IF4C. Yesterday, during the day or at night, did %CHILD% receive Milk such as tinned, powdered, or fresh animal milk?]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF4C. Yesterday, during the day or at night, did %CHILD% receive Milk such as tinned, powdered, or fresh animal milk?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V230" name="JUICE" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received juice]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF4D. Yesterday, during the day or at night, did %CHILD% receive Juice or juice drinks?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V231" name="Broth" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received clear broth]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF4E. Yesterday, during the day or at night, did %CHILD% receive Clear broth?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V232" name="YOGURT" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received yogurt]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF4F. Yesterday, during the day or at night, did %CHILD% receive Sour milk yogurt?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V233" name="THINPOR" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received porridge]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF4G. Yesterday, during the day or at night, did %CHILD% receive Thin porridge?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V234" name="WHTEACOF" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received coffee with mlik]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF4H. Yesterday, during the day or at night, did %CHILD% receive Tea or coffee with milk?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V235" name="WATLQD" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received other liquids]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF4I. Yesterday, during the day or at night, did %CHILD% receive Other water-based liquids?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V236" name="FOOD" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child consume food]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF5. Yesterday, during the day or at night, did %CHILD% eat solid or semi-solid (soft, mushy) food?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V237" name="BOTTLE" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child drink bottle nipple teat]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF6. Did %CHILD% drink anything from a bottle with a nipple / teat yesterday during the day or at night?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V238" name="FLESHFD" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received flesh foods]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF7A. Yesterday, during the day or at night, did %CHILD% receive Flesh foods?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V239" name="FBF" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received FBF]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF7B. Yesterday, during the day or at night, did %CHILD% receive FBF?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V240" name="FBFSUPER" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received FBF++]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF7C. Yesterday, during the day or at night, did %CHILD% receive FBF++?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V241" name="RUTF" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received RUTF]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF7D. Yesterday, during the day or at night, did %CHILD% receive RUTF?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V242" name="RUSF" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received RUSF]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF7E. Yesterday, during the day or at night, did %CHILD% receive RUSF?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V243" name="LNS" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received LNS]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF7F. Yesterday, during the day or at night, did %CHILD% receive LNS?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V244" name="INFORMFE" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received Infant formula]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF7G. Yesterday, during the day or at night, did %CHILD% receive Infant formula?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V245" name="FOODFE" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[received Iron fortified foods]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF7H. Yesterday, during the day or at night, did %CHILD% receive Iron fortified solid, semi-solid or soft foods?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V246" name="MNP" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child drink bottle nipple teat]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[IF8. Yesterday, during the day or night, did %CHILD% consume any food to which you added a [powder or sprinkles] like this?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V247" name="WMCONST" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Consent - WM Questionnaire]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM2. Was consent given for conducting the interview and the measurements?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[Absent]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V248" name="WMAGE" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Woman age]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM4. Age of %rostertitle% in years.]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>998</catValu>
+        <labl><![CDATA[Don't know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V249" name="PREGNANT" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Is pregnat]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM5. Are you pregnant?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V250" name="ANC" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Enrolled ANC]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM6. Are you currently enrolled in the ANC programme?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V251" name="FENEC" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Receiving iron-folate]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM7. Are you currently receiving iron-folate pills?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V252" name="LACTAT" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Is breastfeeding]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM8. Are you currently breastfeeding?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V253" name="LACTATU6" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Is breastfeeding]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM9. Is the child you are breastfeeding younger than 6 months old?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V254" name="WMBSFP" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Enrolled BSFO WM]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM10. Are you currently enrolled in the BSFP?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V255" name="WMMUACUNIT" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Child MUAC unit]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM11A. Unit of measurement for CH15A:]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[centimeters]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[millimeters]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V256" name="WMMUAC" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Is breastfeeding]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM11B. %rostertitle%’s MUAC in mm (±1mm) or cm (±0.1cm)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V257" name="WMHBUNIT" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[HemoCue unit of meas.]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM12. Units of measurement of your HemoCue device (g/dL or g/L)]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[g/dL]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[g/L]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V258" name="WMHB" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Woman Hb measure]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WM13. %rostertitle%’s haemoglobin (Hb) in g/dL (±0.1 g/dL) or in g/L (±1g/L)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V259" name="WMHBGDL" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[WMHBGDL]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WMHBUNIT == 1 ? WMHB : WMHB / 10]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V260" name="WMREFAN" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[WMREFAN]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[WMHBGDL.InRange(0,8)]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V261" name="SLEEPHH" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Did member sleep last night]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN16X. Did %MEMBERNETS% sleep here last night?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V262" name="SLPNET" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Did member sleep under net]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN16. Did %MEMBERNETS% sleep under a net last night?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V263" name="SLPBRAND1" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Net brand name for member]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN17. Select the bed number of the net under which the household member slept]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[DAWAPLUS]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[DURANET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>3</catValu>
+        <labl><![CDATA[INTERCEPTOR]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>4</catValu>
+        <labl><![CDATA[LIFENET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>5</catValu>
+        <labl><![CDATA[MAGNET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>6</catValu>
+        <labl><![CDATA[MIRANET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>7</catValu>
+        <labl><![CDATA[OLYSET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[PANDANET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>9</catValu>
+        <labl><![CDATA[PERMANET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>10</catValu>
+        <labl><![CDATA[ROYALSENTRY]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>11</catValu>
+        <labl><![CDATA[SAFENET]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>12</catValu>
+        <labl><![CDATA[VEERALIN]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>13</catValu>
+        <labl><![CDATA[YALE]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>14</catValu>
+        <labl><![CDATA[YORKOOL]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>15</catValu>
+        <labl><![CDATA[Insecticide treated net (ITN) #1]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>16</catValu>
+        <labl><![CDATA[Insecticide treated net (ITN) #2]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>17</catValu>
+        <labl><![CDATA[Insecticide treated net (ITN) #3]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>95</catValu>
+        <labl><![CDATA[NOT IN LIST]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V264" name="SLPBRAND2" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Net brand name for member - other options]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN17. Select the bed number of the net under which the household member slept]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V265" name="HHMSEX" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Sex of member]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM10. What is the sex of %rostertitle%?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Male]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Female]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V266" name="HHMAGE" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Age of member]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM11. What is the age of  %rostertitle% (years)?]]></qstnLit>
+        <ivuInstr><![CDATA[YOU DO NOT NEED TO SEE PROOF OF AGE]]></ivuInstr>
+      </qstn>
+      <catgry>
+        <catValu>0</catValu>
+        <labl><![CDATA[Less than a year old]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>998</catValu>
+        <labl><![CDATA[Don't know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V267" name="HHMPREG" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Is pregnant]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM12. Is  %rostertitle% currently pregnant?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V268" name="NAME" files="F4" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Roster list question]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+    <var ID="V269" name="interview__id" files="F4" intrvl="discrete">
+      <location width="255" RecSegNo="1" />
+      <labl><![CDATA[Unique 32-character long identifier of the interview]]></labl>
+      <qstn />
+      <varFormat type="character" schema="other" />
+    </var>
+  </dataDscr>
+  <fileDscr ID="F1" URI="Temp#33.~esstar?Index=0&amp;Name=sens_suso">
+    <fileTxt>
+      <fileName>sens_suso.NSDstat</fileName>
+      <dimensns>
+        <caseQnty>0</caseQnty>
+        <varQnty>174</varQnty>
+      </dimensns>
+      <fileType>Nesstar 200801</fileType>
+    </fileTxt>
+  </fileDscr>
+  <fileDscr ID="F2" URI="Temp#33.~esstar?Index=1&amp;Name=BEDNETS">
+    <fileTxt>
+      <fileName>BEDNETS.NSDstat</fileName>
+      <dimensns>
+        <caseQnty>0</caseQnty>
+        <varQnty>6</varQnty>
+      </dimensns>
+      <fileType>Nesstar 200801</fileType>
+    </fileTxt>
+  </fileDscr>
+  <fileDscr ID="F3" URI="Temp#33.~esstar?Index=2&amp;Name=WATERCONTAINERS">
+    <fileTxt>
+      <fileName>WATERCONTAINERS.NSDstat</fileName>
+      <dimensns>
+        <caseQnty>0</caseQnty>
+        <varQnty>7</varQnty>
+      </dimensns>
+      <fileType>Nesstar 200801</fileType>
+    </fileTxt>
+  </fileDscr>
+  <fileDscr ID="F4" URI="Temp#33.~esstar?Index=3&amp;Name=CHILD">
+    <fileTxt>
+      <fileName>CHILD.NSDstat</fileName>
+      <dimensns>
+        <caseQnty>0</caseQnty>
+        <varQnty>82</varQnty>
+      </dimensns>
+      <fileType>Nesstar 200801</fileType>
+    </fileTxt>
+  </fileDscr>
+</codeBook>

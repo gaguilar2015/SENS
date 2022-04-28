@@ -1,0 +1,246 @@
+---
+title: "Survey Solutions and UNHCR's SENS"
+subtitle: "Sample data analysis"
+author: "Gian Aguilar"
+date: "4/29/2022"
+editor: visual
+fontsize: '12'
+---
+
+```{=html}
+<style type="text/css">
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+code.r{
+  font-size: 12px;
+  font-family: 'Fira Code', monospace;
+}
+pre {
+  font-size: 12px;
+  font-family: 'Fira Code', monospace;
+}
+</style>
+```
+```{r}
+#| label: load-packages
+#| include: false
+#| warning: false
+
+# THE FIRST TIME RUNNING THIS SCRIPT, UNCOMMENT THE BELOW COMMANDS AND RUN THEM
+# install.packages("devtools")
+#devtools::install_github("arthur-shaw/susoapi")
+#install.packages('rio')
+#install.packages('dplyr')
+#install.packages('haven')
+#install.packages('janitor')
+
+# Load the necessary libraries
+library(susoapi)
+library(dplyr)
+library(tidyr)
+library(haven)
+library(janitor)
+library(httr)
+library(questionr)
+library(kableExtra)
+library(ggplot2)
+library(palmerpenguins)
+
+#' zip file names
+ZIP_NAME <- 'SENS.zip'
+FOLDER_NAME <- 'SENS_FILES'
+
+#' File names
+BASE_FILE <- 'sens_suso'
+MEMBERS <- 'CHILD'
+
+#' In production, most of the below would be stored in environmental variables, for security reasons
+
+#' Survey Solutions API constants
+SERVER_URL <- 'http://surveys.belizeanalytics.com/'
+WS <- 'sens'
+QID <- '7dae055421cb4b7bbd136ae492a044d8$6'
+FILE_TYPE <- 'SPSS'
+
+#' API credentials
+API_USER <- Sys.getenv('SS_API_USER')
+API_PWD <- Sys.getenv('SS_API_PWD')
+```
+
+```{r}
+#| echo: false
+#| include: false
+#| eval: false
+
+set_credentials(
+  server = SERVER_URL,
+  user = API_USER,
+  password = API_PWD
+)
+
+export_data <- function(){
+  
+    start_export(
+    qnr_id = QID,
+    export_type = FILE_TYPE,
+    interview_status = "All",
+    include_meta = TRUE,
+    workspace = WS
+  ) -> started_job_id
+  
+  # get export status details and run a while loop until job is completed
+  exstat <- get_export_job_details(job_id = started_job_id, workspace = WS)
+  
+  while(exstat$ExportStatus != "Completed"){
+    exstat <- get_export_job_details(job_id = started_job_id, workspace = WS)
+  }
+  
+  reqUrl <- paste0(SERVER_URL, 'sens/api/v2/export/', exstat$JobId, "/file")
+  response <- GET(reqUrl, authenticate(API_USER, API_PWD))
+  files <- content(response, "raw")
+  
+  #3. Open a file connection to unzip downloaded files and save into local directory
+  filecon <- file(file.path('./', ZIP_NAME), "wb")
+  writeBin(files, filecon)
+  close(filecon)
+  
+  unzip(paste0('./', ZIP_NAME),
+        exdir = paste0('./', FOLDER_NAME))
+}
+```
+
+## Introduction
+
+The [Standardised Expanded Nutrition Survey](https://sens.unhcr.org) (SENS) is a health and nutrition survey by the United Nation's High Commission for Refugees (UNHCR), aimed at improving nutrition among refugee populations by gathering quality data to develop timely policies and interventions.
+
+This document provides a brief guide to preparing SENS data for data analysis when the data-source is Survey Solutions. It assumes that the reader is familiar with Survey Solutions and has implemented (or will implement) a SENS activity using the standard Survey Solutions SENS template *(will be linked when public).*
+
+The statistical software that will be used in this guide is R, an open-source language for graphical and statistical computing. All examples and code will be written in R, with the assistance of some key packages. All code was developed and tested using the R **version 4.1.1**. Please ensure that your local R installation is version 4 or higher.
+
+In addition, this guide will make heavy use of the [*Tidyverse*](https://www.tidyverse.org/packages/), which is a set of packages and style-guidelines for data analysis in R. The two main Tidyverse packages used in this guide are `dplyr`, for data wrangling, and `ggplot2`, for plots and graphs. The 'R Code: Preparation' section contains more information about these and other R packages used in this guide.
+
+## Structure of Exported Data
+
+The first step is exporting and downloading the survey data from Survey Solutions. The details of exporting data will not be discussed here but documentation can be found in the [official Survey Solutions documentation site](https://docs.mysurvey.solutions/headquarters/export/).
+
+The image below displays all survey and system-generated files that are extracted from the Survey Solutions export.
+
+![](images/sens_files.png){width="300"}
+
+For this guide, the files have been exported in SPSS format. The main survey files are:
+
+-   sens_suso.sav - the base file containing all household-level items. The modules included at this level are
+
+    -   Demography (M. 1)
+    -   Food Security (M. 5)
+    -   Mosquito Net (M. 6)
+    -   WASH (M. 7)
+
+-   HHMEMBERS.sav - the individual-level file containing individual-level items. These include child and woman questionnaire data and modules:
+
+    -   Anthropometry & Health (M. 2) - Child and Woman
+    -   Anaemia (M. 3) - Child and Woman
+    -   IYCF (m. 4) - Child.
+
+-   BEDNETS.sav - information on bed nets from the Mosquito Nets module.
+
+-   WATERCONTAINERS.sav - information on household water storage containers from the WASH module.
+
+For information on the system-generated Survey Solutions file, [please refer to the official documentation](https://docs.mysurvey.solutions/headquarters/export/system-generated---export-file-anatomy/).
+
+## R Code: Preparation
+
+### Installing and loading packages
+
+Several very useful R packages will be used in this guide. These should be installed (if not done so already) and then loaded:
+
+```{r}
+#| include: true
+#| echo: true
+#| eval: false
+#| label: packages
+
+#To install the packages used in this guide, uncomment and run the lines below.
+#install.packages(haven)      # For importing SPSS files into R
+#install.packages(janitor)    # For cleaning/housekeeping datasets
+#install.packages(dplyr)      # For wrangling and summarising datasets
+#install.packages(tidyr)      # For reshaping datasets
+#install.packages(ggplot2)    # For plotting and visualization
+#install.packages(questionr)  # For easy frequency and descrptive tables
+
+library(haven)
+library(janitor)
+library(dplyr)
+library(tidyr)
+library(questionr)
+library(ggplot2)
+```
+
+### Importing and merging survey files
+
+It is assumed that you have downloaded and extracted the SENS survey files into a folder called `SENS_FILES` in your local working directory. These files can now be worked with.
+
+First, the household-level base file and the individual-level file are imported using the `read_sav` function from the `haven` package. This function is used for importing SPSS files into R dataframes. Subsequently, the two files are merged using `dplyr`'s `left_join` method and saved into `sens_df`, which will be one of the main objects used for analysis. For more information on joins, [see here](https://dplyr.tidyverse.org/reference/mutate-joins.html).
+
+```{r}
+#| label: data-import
+#| warning: false
+#| echo: true
+
+base <- read_sav('./SENS_FILES/sens.sav')
+individual <- read_sav('./SENS_FILES/HHMEMBERS.sav')
+
+sens_df <- base |> 
+  left_join(individual, by = 'interview__key')
+```
+
+I eata da spaghetti
+
+```{r}
+sens_df <- sens_df |> 
+  mutate(HHSIZE_CAT = case_when(
+      HHSIZE <= 4 ~ '1-4',
+      HHSIZE <= 6 ~ '5-6',
+      HHSIZE <= 9 ~ '7-9',
+      HHSIZE >= 10 ~ '>= 10')
+      )
+```
+
+## R Code: Analysis Demo
+
+### Module 1: Demography
+
+```{r}
+#| label: 'survey-totals'
+
+#summarise survey data on household totals
+survey_totals <- sens_df |> distinct(interview__key, .keep_all = TRUE) |> 
+  summarise(`Total Surveyed` = sum(HHSIZE, na.rm = T),
+         `Total U2` = sum(TOTU2, na.rm = T),
+         `Total U5` = sum(TOTU5, na.rm = T),
+         `Total 5-14` = sum(TOT514, na.rm = T),
+         `Total 15-64` = sum(TOT1564, na.rm = T),
+         `Total 65+` = sum(TOT65OLD, na.rm = T),
+         `Total Pregnant` = sum(TOTPREG, na.rm = T)) |> 
+  select(`Total Surveyed`, `Total U2`, `Total U5`, `Total 5-14`,
+         `Total 15-64`, `Total 65+`, `Total Pregnant`) |> 
+  pivot_longer(cols = everything(),
+               names_to = "Household Totals",
+               values_to = "Result") 
+
+# output the results in a formatted table
+survey_totals |>
+  kbl(caption = "Household Totals") |> 
+  kable_material("hover", full_width = F) |> 
+  kable_styling(font_size = 13)
+```
+
+Frequencies of household sizes.
+
+```{r}
+questionr::freq(sens_df$HHSIZE_CAT) |>
+  kbl(caption = "Household Size") |> 
+  kable_material("hover", full_width = F) |> 
+  kable_styling(font_size = 13)
+```
