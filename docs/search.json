@@ -7,13 +7,6 @@
     "text": "The Standardised Expanded Nutrition Survey (SENS) is a health and nutrition survey by the United Nation’s High Commission for Refugees (UNHCR), aimed at improving nutrition among refugee populations by gathering quality data to develop timely policies and interventions.\nThis document provides a brief guide to preparing SENS data for data analysis when the data-source is Survey Solutions. It assumes that the reader is familiar with Survey Solutions and has implemented (or will implement) a SENS activity using the standard Survey Solutions SENS template (will be linked when public).\nThe statistical software that will be used in this guide is R, an open-source language for graphical and statistical computing. All examples and code will be written in R, with the assistance of some key packages. All code was developed and tested using the R version 4.1.1. Please ensure that your local R installation is version 4 or higher.\nIn addition, this guide will make heavy use of the Tidyverse, which is a set of packages and style-guidelines for data analysis in R. The two main Tidyverse packages used in this guide are dplyr, for data wrangling, and ggplot2, for plots and graphs. The ‘R Code: Preparation’ section contains more information about these and other R packages used in this guide."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "index.html#structure-of-exported-data",
     "href": "index.html#structure-of-exported-data",
     "title": "Survey Solutions and UNHCR’s SENS",
@@ -33,5 +26,12 @@
     "title": "Survey Solutions and UNHCR’s SENS",
     "section": "R Code: Analysis Demo",
     "text": "R Code: Analysis Demo\n\nModule 1: Demography\n\n#summarise survey data on household totals\nsurvey_totals <- sens_df |> distinct(interview__key, .keep_all = TRUE) |> \n  summarise(`Total Surveyed` = sum(HHSIZE, na.rm = T),\n         `Total U2` = sum(TOTU2, na.rm = T),\n         `Total U5` = sum(TOTU5, na.rm = T),\n         `Total 5-14` = sum(TOT514, na.rm = T),\n         `Total 15-64` = sum(TOT1564, na.rm = T),\n         `Total 65+` = sum(TOT65OLD, na.rm = T),\n         `Total Pregnant` = sum(TOTPREG, na.rm = T)) |> \n  select(`Total Surveyed`, `Total U2`, `Total U5`, `Total 5-14`,\n         `Total 15-64`, `Total 65+`, `Total Pregnant`) |> \n  pivot_longer(cols = everything(),\n               names_to = \"Household Totals\",\n               values_to = \"Result\") \n\n# output the results in a formatted table\nsurvey_totals |>\n  kbl(caption = \"Household Totals\") |> \n  kable_material(\"hover\", full_width = F) |> \n  kable_styling(font_size = 13)\n\n\nHousehold Totals\n \n  \n    Household Totals \n    Result \n  \n \n\n  \n    Total Surveyed \n    4 \n  \n  \n    Total U2 \n    0 \n  \n  \n    Total U5 \n    0 \n  \n  \n    Total 5-14 \n    0 \n  \n  \n    Total 15-64 \n    4 \n  \n  \n    Total 65+ \n    0 \n  \n  \n    Total Pregnant \n    1 \n  \n\n\n\n\n\nFrequencies of household sizes.\n\nquestionr::freq(sens_df$HHSIZE_CAT) |>\n  kbl(caption = \"Household Size\") |> \n  kable_material(\"hover\", full_width = F) |> \n  kable_styling(font_size = 13)\n\n\nHousehold Size\n \n  \n      \n    n \n    % \n    val% \n  \n \n\n  \n    1-4 \n    4 \n    100 \n    100"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   }
 ]
