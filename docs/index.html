@@ -212,11 +212,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 code.r{
-  font-size: 12px;
+  font-size: 13px;
   font-family: 'Fira Code', monospace;
 }
 pre {
-  font-size: 12px;
+  font-size: 13px;
   font-family: 'Fira Code', monospace;
 }
 </style>
@@ -234,21 +234,21 @@ pre {
 <p><img src="images/sens_files.png" class="img-fluid" width="300"></p>
 <p>For this guide, the files have been exported in SPSS format. The main survey files are:</p>
 <ul>
-<li><p>sens_suso.sav - the base file containing all household-level items. The modules included at this level are</p>
+<li>sens_suso.sav - the base file containing all household-level items. The modules included at this level are
 <ul>
 <li>Demography (M. 1)</li>
 <li>Food Security (M. 5)</li>
 <li>Mosquito Net (M. 6)</li>
 <li>WASH (M. 7)</li>
 </ul></li>
-<li><p>HHMEMBERS.sav - the individual-level file containing individual-level items. These include child and woman questionnaire data and modules:</p>
+<li>HHMEMBERS.sav - the individual-level file containing individual-level items. These include child and woman questionnaire data and modules:
 <ul>
 <li>Anthropometry &amp; Health (M. 2) - Child and Woman</li>
 <li>Anaemia (M. 3) - Child and Woman</li>
 <li>IYCF (m. 4) - Child.</li>
 </ul></li>
-<li><p>BEDNETS.sav - information on bed nets from the Mosquito Nets module.</p></li>
-<li><p>WATERCONTAINERS.sav - information on household water storage containers from the WASH module.</p></li>
+<li>BEDNETS.sav - information on bed nets from the Mosquito Nets module.</li>
+<li>WATERCONTAINERS.sav - information on household water storage containers from the WASH module.</li>
 </ul>
 <p>For information on the system-generated Survey Solutions file, <a href="https://docs.mysurvey.solutions/headquarters/export/system-generated---export-file-anatomy/">please refer to the official documentation</a>.</p>
 </section>
@@ -276,52 +276,123 @@ pre {
 </section>
 <section id="importing-and-merging-survey-files" class="level3">
 <h3 class="anchored" data-anchor-id="importing-and-merging-survey-files">Importing and merging survey files</h3>
-<p>It is assumed that you have downloaded and extracted the SENS survey files into a folder called <code>SENS_FILES</code> in your local working directory. These files can now be worked with.</p>
-<p>First, the household-level base file and the individual-level file are imported using the <code>read_sav</code> function from the <code>haven</code> package. This function is used for importing SPSS files into R dataframes. Subsequently, the two files are merged using <code>dplyr</code>’s <code>left_join</code> method and saved into <code>sens_df</code>, which will be one of the main objects used for analysis. For more information on joins, <a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">see here</a>.</p>
+<p>It is assumed that you have downloaded and extracted the SENS survey files into a folder called <code>SENS_FILES</code> in your local working directory. These files can now be worked with. What follows in this subsection is some basic preparation of the survey data to facilitate further analysis.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">'./SENS_FILES/sens.sav'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>individual <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">'./SENS_FILES/HHMEMBERS.sav'</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sens_df <span class="ot">&lt;-</span> base <span class="sc">|&gt;</span> </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(individual, <span class="at">by =</span> <span class="st">'interview__key'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import files from local directory</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sens_hh <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">'./SENS_FILES/sens.sav'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>sens_ind <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">'./SENS_FILES/HHMEMBERS.sav'</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#add household-size categorical variable</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>sens_hh <span class="ot">&lt;-</span> <span class="fu">mutate</span>(sens_hh, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">HHSIZE_CAT =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                    HHSIZE <span class="sc">&lt;=</span> <span class="dv">4</span> <span class="sc">~</span> <span class="st">'1-4'</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                    HHSIZE <span class="sc">&lt;=</span> <span class="dv">6</span> <span class="sc">~</span> <span class="st">'5-6'</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                    HHSIZE <span class="sc">&lt;=</span> <span class="dv">9</span> <span class="sc">~</span> <span class="st">'7-9'</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                    HHSIZE <span class="sc">&gt;=</span> <span class="dv">10</span> <span class="sc">~</span> <span class="st">'&gt;= 10'</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                  )</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#join household and individual level data frames</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>sens_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(sens_hh, sens_ind, <span class="at">by =</span> <span class="st">'interview__key'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>I eata da spaghetti</p>
+<p>In the above code, the following things take place:</p>
+<ol type="1">
+<li>The survey base/household-level file and the individual-level file are imported using the <code>read_sav</code> function from the <code>haven</code> packaged and saved in R objects as <em>data frames</em>.</li>
+<li>A derived categorical variable of household size is created and attached to the household-level data frame.</li>
+<li>The household and individual level data frames are merged*, using <code>dplyr</code>’s <code>left_join,</code> into a single data frame named <code>sens_df</code>.
+<ul>
+<li>The joining variable is <em>interview__key</em>, which is a key generated by Survey Solutions to uniquely identify interview cases. In this particular context, the <em>interview__key</em> is unique at the household level, meaning that each survey household can be distinctly identified by its <em>interview__key</em>.</li>
+</ul></li>
+</ol>
+<p>*For more information on merges and joins with <code>dplyr</code>, <a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">see here</a>.</p>
+<p>Following, we create a basic function for displaying nicely formatted tables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sens_df <span class="ot">&lt;-</span> sens_df <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">HHSIZE_CAT =</span> <span class="fu">case_when</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>      HHSIZE <span class="sc">&lt;=</span> <span class="dv">4</span> <span class="sc">~</span> <span class="st">'1-4'</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>      HHSIZE <span class="sc">&lt;=</span> <span class="dv">6</span> <span class="sc">~</span> <span class="st">'5-6'</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      HHSIZE <span class="sc">&lt;=</span> <span class="dv">9</span> <span class="sc">~</span> <span class="st">'7-9'</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      HHSIZE <span class="sc">&gt;=</span> <span class="dv">10</span> <span class="sc">~</span> <span class="st">'&gt;= 10'</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>      )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># format a data frame using the {kableExtra} package</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>formattedTable <span class="ot">&lt;-</span> <span class="cf">function</span>(df, capt){</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kbl</span>(<span class="at">caption =</span> capt) <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_material</span>(<span class="st">"hover"</span>, <span class="at">full_width =</span> F) <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">13</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>This formatting is made possible by the <code>kableExtra</code> package. The created <code>formattedTable</code> function takes in two arguments:</p>
+<ol type="i">
+<li><strong>df</strong> - the data frame or table to display.</li>
+<li><strong>capt</strong> - the caption or title for the table.</li>
+</ol>
 </section>
 </section>
 <section id="r-code-analysis-demo" class="level2">
 <h2 class="anchored" data-anchor-id="r-code-analysis-demo">R Code: Analysis Demo</h2>
 <section id="module-1-demography" class="level3">
 <h3 class="anchored" data-anchor-id="module-1-demography">Module 1: Demography</h3>
+<p>Response rates are calculated from the consent (<code>MDCCONST</code>) variable. The function <code>freq</code> from the <code>questionr</code> package is used to produce easy frequency tables with labelled values.</p>
+<p>The result is displayed with the help of our <code>formattedTable</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#summarise survey data on household totals</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>survey_totals <span class="ot">&lt;-</span> sens_df <span class="sc">|&gt;</span> <span class="fu">distinct</span>(interview__key, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">Total Surveyed</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(HHSIZE, <span class="at">na.rm =</span> T),</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Total U2</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTU2, <span class="at">na.rm =</span> T),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Total U5</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTU5, <span class="at">na.rm =</span> T),</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Total 5-14</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT514, <span class="at">na.rm =</span> T),</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Total 15-64</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT1564, <span class="at">na.rm =</span> T),</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Total 65+</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT65OLD, <span class="at">na.rm =</span> T),</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Total Pregnant</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTPREG, <span class="at">na.rm =</span> T)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">Total Surveyed</span><span class="st">`</span>, <span class="st">`</span><span class="at">Total U2</span><span class="st">`</span>, <span class="st">`</span><span class="at">Total U5</span><span class="st">`</span>, <span class="st">`</span><span class="at">Total 5-14</span><span class="st">`</span>,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Total 15-64</span><span class="st">`</span>, <span class="st">`</span><span class="at">Total 65+</span><span class="st">`</span>, <span class="st">`</span><span class="at">Total Pregnant</span><span class="st">`</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(),</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Household Totals"</span>,</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Result"</span>) </span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># output the results in a formatted table</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>survey_totals <span class="sc">|&gt;</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Household Totals"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="st">"hover"</span>, <span class="at">full_width =</span> F) <span class="sc">|&gt;</span> </span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">13</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#derive frequencies</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>response_freq <span class="ot">&lt;-</span> <span class="fu">freq</span>(sens_hh[<span class="st">"MDCCONST"</span>]) </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># output the results in a formatted table</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(response_freq, <span class="st">'Household Consent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class=" lightable-material lightable-hover table" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-size: 13px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">Household Consent</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> n </th>
+   <th style="text-align:right;"> % </th>
+   <th style="text-align:right;"> val% </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> [1] Yes </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 100 </td>
+   <td style="text-align:right;"> 100 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [2] No </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [3] Absent </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> [-999999999] missing </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#summarise survey data on household totals</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>survey_totals <span class="ot">&lt;-</span> <span class="fu">summarise</span>(sens_hh, </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total Surveyed</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(HHSIZE, <span class="at">na.rm =</span> T),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total U2</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTU2, <span class="at">na.rm =</span> T),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total U5</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTU5, <span class="at">na.rm =</span> T),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total 5-14</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT514, <span class="at">na.rm =</span> T),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total 15-64</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT1564, <span class="at">na.rm =</span> T),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total 65+</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT65OLD, <span class="at">na.rm =</span> T),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total Pregnant</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTPREG, <span class="at">na.rm =</span> T))</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#pivot the table from wide to long format</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>survey_totals <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(survey_totals, </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                              <span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                              <span class="at">names_to =</span> <span class="st">"Household Totals"</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                              <span class="at">values_to =</span> <span class="st">"Result"</span>) </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># output the results in a formatted table</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(survey_totals, <span class="st">'Household Totals'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class=" lightable-material lightable-hover table" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-size: 13px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Household Totals</caption>
@@ -367,10 +438,10 @@ pre {
 </div>
 <p>Frequencies of household sizes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>questionr<span class="sc">::</span><span class="fu">freq</span>(sens_df<span class="sc">$</span>HHSIZE_CAT) <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Household Size"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="st">"hover"</span>, <span class="at">full_width =</span> F) <span class="sc">|&gt;</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">13</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>questionr<span class="sc">::</span><span class="fu">freq</span>(sens_df<span class="sc">$</span>HHSIZE_CAT) <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Household Size"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="st">"hover"</span>, <span class="at">full_width =</span> F) <span class="sc">|&gt;</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">13</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class=" lightable-material lightable-hover table" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-size: 13px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Household Size</caption>
