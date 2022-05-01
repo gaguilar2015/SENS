@@ -75,6 +75,7 @@
       <labl><![CDATA[Section Code / Number]]></labl>
       <qstn>
         <qstnLit><![CDATA[ID2. Section Code / Number]]></qstnLit>
+        <ivuInstr><![CDATA[Enter three digits]]></ivuInstr>
       </qstn>
       <varFormat type="character" schema="other" />
     </var>
@@ -3500,29 +3501,69 @@ CONSIDER DRINKING WATER ONLY]]></ivuInstr>
       <location width="255" RecSegNo="1" />
       <labl><![CDATA[Other net brand name]]></labl>
       <qstn>
-        <qstnLit><![CDATA[TN11: Please specify brand of bed net]]></qstnLit>
+        <qstnLit><![CDATA[TN11A: Please specify brand of bed net]]></qstnLit>
       </qstn>
       <varFormat type="character" schema="other" />
     </var>
-    <var ID="V180" name="interview__id" files="F2" intrvl="discrete">
+    <var ID="V180" name="BRANDLLIN" files="F2" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Is other brand LLIN]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN11B: Is this a LLIN?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[Don't know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V181" name="BRANDLNSUP" files="F2" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Is other brand LLIN (supervisor)]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[TN11C: Is this a LLIN?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Yes]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[No]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>8</catValu>
+        <labl><![CDATA[Don't know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V182" name="interview__id" files="F2" intrvl="discrete">
       <location width="255" RecSegNo="1" />
       <labl><![CDATA[Unique 32-character long identifier of the interview]]></labl>
       <qstn />
       <varFormat type="character" schema="other" />
     </var>
-    <var ID="V181" name="WATERCONTAINERS__id" files="F3" intrvl="discrete">
+    <var ID="V183" name="WATERCONTAINERS__id" files="F3" intrvl="discrete">
       <location width="255" RecSegNo="1" />
       <labl><![CDATA[Id in WATERCONTAINERS]]></labl>
       <qstn />
       <varFormat type="character" schema="other" />
     </var>
-    <var ID="V182" name="interview__key" files="F3" intrvl="discrete">
+    <var ID="V184" name="interview__key" files="F3" intrvl="discrete">
       <location width="255" RecSegNo="1" />
       <labl><![CDATA[Interview key (identifier in XX-XX-XX-XX format)]]></labl>
       <qstn />
       <varFormat type="character" schema="other" />
     </var>
-    <var ID="V183" name="TYPE" files="F3" intrvl="discrete">
+    <var ID="V185" name="TYPE" files="F3" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[type of water container]]></labl>
       <qstn>
@@ -3558,7 +3599,7 @@ CONSIDER DRINKING WATER ONLY]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V184" name="LITER" files="F3" intrvl="contin">
+    <var ID="V186" name="LITER" files="F3" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[Water container volume]]></labl>
       <qstn>
@@ -3567,7 +3608,7 @@ CONSIDER DRINKING WATER ONLY]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V185" name="PROTECTED1" files="F3" intrvl="discrete">
+    <var ID="V187" name="PROTECTED1" files="F3" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Water container covered]]></labl>
       <qstn>
@@ -3575,7 +3616,7 @@ CONSIDER DRINKING WATER ONLY]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V186" name="NUMTRIPS" files="F3" intrvl="contin">
+    <var ID="V188" name="NUMTRIPS" files="F3" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[Number of trips with container]]></labl>
       <qstn>
@@ -3588,25 +3629,25 @@ CONSIDER DRINKING WATER ONLY]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V187" name="interview__id" files="F3" intrvl="discrete">
+    <var ID="V189" name="interview__id" files="F3" intrvl="discrete">
       <location width="255" RecSegNo="1" />
       <labl><![CDATA[Unique 32-character long identifier of the interview]]></labl>
       <qstn />
       <varFormat type="character" schema="other" />
     </var>
-    <var ID="V188" name="CHILD__id" files="F4" intrvl="discrete">
+    <var ID="V190" name="CHILD__id" files="F4" intrvl="discrete">
       <location width="255" RecSegNo="1" />
       <labl><![CDATA[Id in CHILD]]></labl>
       <qstn />
       <varFormat type="character" schema="other" />
     </var>
-    <var ID="V189" name="interview__key" files="F4" intrvl="discrete">
+    <var ID="V191" name="interview__key" files="F4" intrvl="discrete">
       <location width="255" RecSegNo="1" />
       <labl><![CDATA[Interview key (identifier in XX-XX-XX-XX format)]]></labl>
       <qstn />
       <varFormat type="character" schema="other" />
     </var>
-    <var ID="V190" name="CHLOWRANGE" files="F4" intrvl="contin">
+    <var ID="V192" name="CHLOWRANGE" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[CHLOWRANGE]]></labl>
       <qstn>
@@ -3614,7 +3655,7 @@ CONSIDER DRINKING WATER ONLY]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V191" name="XDOBK" files="F4" intrvl="discrete">
+    <var ID="V193" name="XDOBK" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Official age documentation]]></labl>
       <qstn>
@@ -3630,7 +3671,7 @@ CONSIDER DRINKING WATER ONLY]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V192" name="BIRTHDAT" files="F4" intrvl="discrete">
+    <var ID="V194" name="BIRTHDAT" files="F4" intrvl="discrete">
       <location width="255" RecSegNo="1" />
       <labl><![CDATA[D.O.B of Child]]></labl>
       <qstn>
@@ -3638,7 +3679,7 @@ CONSIDER DRINKING WATER ONLY]]></ivuInstr>
       </qstn>
       <varFormat type="character" schema="other" />
     </var>
-    <var ID="V193" name="MONTHS" files="F4" intrvl="contin">
+    <var ID="V195" name="MONTHS" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[Age of child months]]></labl>
       <qstn>
@@ -3647,7 +3688,7 @@ CONSIDER DRINKING WATER ONLY]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V194" name="MONTHSX" files="F4" intrvl="contin">
+    <var ID="V196" name="MONTHSX" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[MONTHSX]]></labl>
       <qstn>
@@ -3657,7 +3698,7 @@ CONSIDER DRINKING WATER ONLY]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V195" name="CHELIGIBLE" files="F4" intrvl="contin">
+    <var ID="V197" name="CHELIGIBLE" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[CHELIGIBLE]]></labl>
       <qstn>
@@ -3665,7 +3706,7 @@ CONSIDER DRINKING WATER ONLY]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V196" name="CHCONST" files="F4" intrvl="discrete">
+    <var ID="V198" name="CHCONST" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Consent for CH questionnaire]]></labl>
       <qstn>
@@ -3684,7 +3725,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V197" name="CHARRIVE" files="F4" intrvl="discrete">
+    <var ID="V199" name="CHARRIVE" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child arrive camp]]></labl>
       <qstn>
@@ -3704,7 +3745,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V198" name="CHPRES" files="F4" intrvl="discrete">
+    <var ID="V200" name="CHPRES" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child present]]></labl>
       <qstn>
@@ -3720,7 +3761,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V199" name="WEIGHT" files="F4" intrvl="contin">
+    <var ID="V201" name="WEIGHT" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[Weight of child]]></labl>
       <qstn>
@@ -3728,7 +3769,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V200" name="CLOTHES" files="F4" intrvl="discrete">
+    <var ID="V202" name="CLOTHES" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child wearing clothes]]></labl>
       <qstn>
@@ -3744,7 +3785,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V201" name="HEIGHT" files="F4" intrvl="contin">
+    <var ID="V203" name="HEIGHT" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[Height of child]]></labl>
       <qstn>
@@ -3752,7 +3793,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V202" name="HEIGHTX" files="F4" intrvl="contin">
+    <var ID="V204" name="HEIGHTX" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[HEIGHTX]]></labl>
       <qstn>
@@ -3760,7 +3801,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V203" name="MEASURE" files="F4" intrvl="discrete">
+    <var ID="V205" name="MEASURE" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child standing or lying down]]></labl>
       <qstn>
@@ -3776,7 +3817,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V204" name="EDEMA" files="F4" intrvl="discrete">
+    <var ID="V206" name="EDEMA" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child have edema]]></labl>
       <qstn>
@@ -3792,7 +3833,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V205" name="MUAC" files="F4" intrvl="contin">
+    <var ID="V207" name="MUAC" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[Child MUAC]]></labl>
       <qstn>
@@ -3800,7 +3841,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V206" name="MUACUNIT" files="F4" intrvl="discrete">
+    <var ID="V208" name="MUACUNIT" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child MUAC unit]]></labl>
       <qstn>
@@ -3816,7 +3857,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V207" name="MUACX" files="F4" intrvl="contin">
+    <var ID="V209" name="MUACX" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[MUACX]]></labl>
       <qstn>
@@ -3824,7 +3865,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V208" name="ENROLX" files="F4" intrvl="discrete">
+    <var ID="V210" name="ENROLX" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child enrolled malnutrition programme]]></labl>
       <qstn>
@@ -3832,7 +3873,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V209" name="ENROL__1" files="F4" intrvl="discrete">
+    <var ID="V211" name="ENROL__1" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Malnutrition programme:Programme 1]]></labl>
       <qstn>
@@ -3840,7 +3881,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V210" name="ENROL__2" files="F4" intrvl="discrete">
+    <var ID="V212" name="ENROL__2" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Malnutrition programme:Programme 2]]></labl>
       <qstn>
@@ -3848,7 +3889,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V211" name="ENROL__3" files="F4" intrvl="discrete">
+    <var ID="V213" name="ENROL__3" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Malnutrition programme:Programme 3]]></labl>
       <qstn>
@@ -3856,7 +3897,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V212" name="BSFP" files="F4" intrvl="discrete">
+    <var ID="V214" name="BSFP" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child BSFP]]></labl>
       <qstn>
@@ -3864,7 +3905,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V213" name="MEASLES" files="F4" intrvl="discrete">
+    <var ID="V215" name="MEASLES" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Vaxxed for measles]]></labl>
       <qstn>
@@ -3872,7 +3913,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V214" name="VITA" files="F4" intrvl="discrete">
+    <var ID="V216" name="VITA" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Vit A capsule]]></labl>
       <qstn>
@@ -3880,7 +3921,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V215" name="DEWORM" files="F4" intrvl="discrete">
+    <var ID="V217" name="DEWORM" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child given dewormer]]></labl>
       <qstn>
@@ -3888,7 +3929,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V216" name="DIAR" files="F4" intrvl="discrete">
+    <var ID="V218" name="DIAR" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child given dewormer]]></labl>
       <qstn>
@@ -3896,7 +3937,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V217" name="DIARORS" files="F4" intrvl="discrete">
+    <var ID="V219" name="DIARORS" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child given dewormer]]></labl>
       <qstn>
@@ -3904,7 +3945,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V218" name="DIARZINC" files="F4" intrvl="discrete">
+    <var ID="V220" name="DIARZINC" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child given dewormer]]></labl>
       <qstn>
@@ -3912,7 +3953,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V219" name="WFZ" files="F4" intrvl="contin">
+    <var ID="V221" name="WFZ" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[WFZ]]></labl>
       <qstn>
@@ -3920,7 +3961,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V220" name="HBUNIT" files="F4" intrvl="discrete">
+    <var ID="V222" name="HBUNIT" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[HemoCue unit of meas.]]></labl>
       <qstn>
@@ -3936,7 +3977,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V221" name="CHHB" files="F4" intrvl="contin">
+    <var ID="V223" name="CHHB" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[Child Hb measure]]></labl>
       <qstn>
@@ -3944,7 +3985,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V222" name="HBGDL" files="F4" intrvl="contin">
+    <var ID="V224" name="HBGDL" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[HBGDL]]></labl>
       <qstn>
@@ -3952,7 +3993,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V223" name="REFANEM" files="F4" intrvl="contin">
+    <var ID="V225" name="REFANEM" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[REFANEM]]></labl>
       <qstn>
@@ -3960,7 +4001,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V224" name="EVERBF" files="F4" intrvl="discrete">
+    <var ID="V226" name="EVERBF" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child breastfed]]></labl>
       <qstn>
@@ -3968,7 +4009,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V225" name="INITBF" files="F4" intrvl="discrete">
+    <var ID="V227" name="INITBF" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child breastfed start]]></labl>
       <qstn>
@@ -3992,7 +4033,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V226" name="YESTBF" files="F4" intrvl="discrete">
+    <var ID="V228" name="YESTBF" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child breastfed]]></labl>
       <qstn>
@@ -4000,7 +4041,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V227" name="WATER" files="F4" intrvl="discrete">
+    <var ID="V229" name="WATER" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received plain water]]></labl>
       <qstn>
@@ -4008,7 +4049,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V228" name="INFORM" files="F4" intrvl="discrete">
+    <var ID="V230" name="INFORM" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received infant formula]]></labl>
       <qstn>
@@ -4016,7 +4057,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V229" name="MILK" files="F4" intrvl="discrete">
+    <var ID="V231" name="MILK" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[IF4C. Yesterday, during the day or at night, did %CHILD% receive Milk such as tinned, powdered, or fresh animal milk?]]></labl>
       <qstn>
@@ -4024,7 +4065,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V230" name="JUICE" files="F4" intrvl="discrete">
+    <var ID="V232" name="JUICE" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received juice]]></labl>
       <qstn>
@@ -4032,7 +4073,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V231" name="Broth" files="F4" intrvl="discrete">
+    <var ID="V233" name="Broth" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received clear broth]]></labl>
       <qstn>
@@ -4040,7 +4081,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V232" name="YOGURT" files="F4" intrvl="discrete">
+    <var ID="V234" name="YOGURT" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received yogurt]]></labl>
       <qstn>
@@ -4048,7 +4089,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V233" name="THINPOR" files="F4" intrvl="discrete">
+    <var ID="V235" name="THINPOR" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received porridge]]></labl>
       <qstn>
@@ -4056,7 +4097,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V234" name="WHTEACOF" files="F4" intrvl="discrete">
+    <var ID="V236" name="WHTEACOF" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received coffee with mlik]]></labl>
       <qstn>
@@ -4064,7 +4105,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V235" name="WATLQD" files="F4" intrvl="discrete">
+    <var ID="V237" name="WATLQD" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received other liquids]]></labl>
       <qstn>
@@ -4072,7 +4113,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V236" name="FOOD" files="F4" intrvl="discrete">
+    <var ID="V238" name="FOOD" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child consume food]]></labl>
       <qstn>
@@ -4080,7 +4121,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V237" name="BOTTLE" files="F4" intrvl="discrete">
+    <var ID="V239" name="BOTTLE" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child drink bottle nipple teat]]></labl>
       <qstn>
@@ -4088,7 +4129,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V238" name="FLESHFD" files="F4" intrvl="discrete">
+    <var ID="V240" name="FLESHFD" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received flesh foods]]></labl>
       <qstn>
@@ -4096,7 +4137,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V239" name="FBF" files="F4" intrvl="discrete">
+    <var ID="V241" name="FBF" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received FBF]]></labl>
       <qstn>
@@ -4104,7 +4145,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V240" name="FBFSUPER" files="F4" intrvl="discrete">
+    <var ID="V242" name="FBFSUPER" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received FBF++]]></labl>
       <qstn>
@@ -4112,7 +4153,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V241" name="RUTF" files="F4" intrvl="discrete">
+    <var ID="V243" name="RUTF" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received RUTF]]></labl>
       <qstn>
@@ -4120,7 +4161,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V242" name="RUSF" files="F4" intrvl="discrete">
+    <var ID="V244" name="RUSF" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received RUSF]]></labl>
       <qstn>
@@ -4128,7 +4169,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V243" name="LNS" files="F4" intrvl="discrete">
+    <var ID="V245" name="LNS" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received LNS]]></labl>
       <qstn>
@@ -4136,7 +4177,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V244" name="INFORMFE" files="F4" intrvl="discrete">
+    <var ID="V246" name="INFORMFE" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received Infant formula]]></labl>
       <qstn>
@@ -4144,7 +4185,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V245" name="FOODFE" files="F4" intrvl="discrete">
+    <var ID="V247" name="FOODFE" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[received Iron fortified foods]]></labl>
       <qstn>
@@ -4152,7 +4193,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V246" name="MNP" files="F4" intrvl="discrete">
+    <var ID="V248" name="MNP" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child drink bottle nipple teat]]></labl>
       <qstn>
@@ -4160,7 +4201,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V247" name="WMCONST" files="F4" intrvl="discrete">
+    <var ID="V249" name="WMCONST" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Consent - WM Questionnaire]]></labl>
       <qstn>
@@ -4180,7 +4221,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V248" name="WMAGE" files="F4" intrvl="contin">
+    <var ID="V250" name="WMAGE" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[Woman age]]></labl>
       <qstn>
@@ -4192,7 +4233,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V249" name="PREGNANT" files="F4" intrvl="discrete">
+    <var ID="V251" name="PREGNANT" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Is pregnat]]></labl>
       <qstn>
@@ -4200,7 +4241,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V250" name="ANC" files="F4" intrvl="discrete">
+    <var ID="V252" name="ANC" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Enrolled ANC]]></labl>
       <qstn>
@@ -4208,7 +4249,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V251" name="FENEC" files="F4" intrvl="discrete">
+    <var ID="V253" name="FENEC" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Receiving iron-folate]]></labl>
       <qstn>
@@ -4216,7 +4257,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V252" name="LACTAT" files="F4" intrvl="discrete">
+    <var ID="V254" name="LACTAT" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Is breastfeeding]]></labl>
       <qstn>
@@ -4224,7 +4265,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V253" name="LACTATU6" files="F4" intrvl="discrete">
+    <var ID="V255" name="LACTATU6" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Is breastfeeding]]></labl>
       <qstn>
@@ -4232,7 +4273,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V254" name="WMBSFP" files="F4" intrvl="discrete">
+    <var ID="V256" name="WMBSFP" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Enrolled BSFO WM]]></labl>
       <qstn>
@@ -4240,7 +4281,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V255" name="WMMUACUNIT" files="F4" intrvl="discrete">
+    <var ID="V257" name="WMMUACUNIT" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Child MUAC unit]]></labl>
       <qstn>
@@ -4256,7 +4297,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V256" name="WMMUAC" files="F4" intrvl="contin">
+    <var ID="V258" name="WMMUAC" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[Is breastfeeding]]></labl>
       <qstn>
@@ -4264,7 +4305,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V257" name="WMHBUNIT" files="F4" intrvl="discrete">
+    <var ID="V259" name="WMHBUNIT" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[HemoCue unit of meas.]]></labl>
       <qstn>
@@ -4280,7 +4321,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V258" name="WMHB" files="F4" intrvl="contin">
+    <var ID="V260" name="WMHB" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[Woman Hb measure]]></labl>
       <qstn>
@@ -4288,7 +4329,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V259" name="WMHBGDL" files="F4" intrvl="contin">
+    <var ID="V261" name="WMHBGDL" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[WMHBGDL]]></labl>
       <qstn>
@@ -4296,7 +4337,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V260" name="WMREFAN" files="F4" intrvl="contin">
+    <var ID="V262" name="WMREFAN" files="F4" intrvl="contin">
       <location RecSegNo="1" />
       <labl><![CDATA[WMREFAN]]></labl>
       <qstn>
@@ -4304,7 +4345,48 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V261" name="SLEEPHH" files="F4" intrvl="discrete">
+    <var ID="V263" name="HHMSEX" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Sex of member]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM10. What is the sex of %rostertitle%?]]></qstnLit>
+      </qstn>
+      <catgry>
+        <catValu>1</catValu>
+        <labl><![CDATA[Male]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>2</catValu>
+        <labl><![CDATA[Female]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V264" name="HHMAGE" files="F4" intrvl="contin">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Age of member]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM11. What is the age of  %rostertitle% (years)?]]></qstnLit>
+        <ivuInstr><![CDATA[YOU DO NOT NEED TO SEE PROOF OF AGE]]></ivuInstr>
+      </qstn>
+      <catgry>
+        <catValu>0</catValu>
+        <labl><![CDATA[Less than a year old]]></labl>
+      </catgry>
+      <catgry>
+        <catValu>998</catValu>
+        <labl><![CDATA[Don't know]]></labl>
+      </catgry>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V265" name="HHMPREG" files="F4" intrvl="discrete">
+      <location RecSegNo="1" />
+      <labl><![CDATA[Is pregnant]]></labl>
+      <qstn>
+        <qstnLit><![CDATA[DM12. Is  %rostertitle% currently pregnant?]]></qstnLit>
+      </qstn>
+      <varFormat type="numeric" schema="other" />
+    </var>
+    <var ID="V266" name="SLEEPHH" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Did member sleep last night]]></labl>
       <qstn>
@@ -4312,7 +4394,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V262" name="SLPNET" files="F4" intrvl="discrete">
+    <var ID="V267" name="SLPNET" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Did member sleep under net]]></labl>
       <qstn>
@@ -4320,7 +4402,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V263" name="SLPBRAND1" files="F4" intrvl="discrete">
+    <var ID="V268" name="SLPBRAND1" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Net brand name for member]]></labl>
       <qstn>
@@ -4400,7 +4482,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </catgry>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V264" name="SLPBRAND2" files="F4" intrvl="discrete">
+    <var ID="V269" name="SLPBRAND2" files="F4" intrvl="discrete">
       <location RecSegNo="1" />
       <labl><![CDATA[Net brand name for member - other options]]></labl>
       <qstn>
@@ -4408,54 +4490,13 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       </qstn>
       <varFormat type="numeric" schema="other" />
     </var>
-    <var ID="V265" name="HHMSEX" files="F4" intrvl="discrete">
-      <location RecSegNo="1" />
-      <labl><![CDATA[Sex of member]]></labl>
-      <qstn>
-        <qstnLit><![CDATA[DM10. What is the sex of %rostertitle%?]]></qstnLit>
-      </qstn>
-      <catgry>
-        <catValu>1</catValu>
-        <labl><![CDATA[Male]]></labl>
-      </catgry>
-      <catgry>
-        <catValu>2</catValu>
-        <labl><![CDATA[Female]]></labl>
-      </catgry>
-      <varFormat type="numeric" schema="other" />
-    </var>
-    <var ID="V266" name="HHMAGE" files="F4" intrvl="contin">
-      <location RecSegNo="1" />
-      <labl><![CDATA[Age of member]]></labl>
-      <qstn>
-        <qstnLit><![CDATA[DM11. What is the age of  %rostertitle% (years)?]]></qstnLit>
-        <ivuInstr><![CDATA[YOU DO NOT NEED TO SEE PROOF OF AGE]]></ivuInstr>
-      </qstn>
-      <catgry>
-        <catValu>0</catValu>
-        <labl><![CDATA[Less than a year old]]></labl>
-      </catgry>
-      <catgry>
-        <catValu>998</catValu>
-        <labl><![CDATA[Don't know]]></labl>
-      </catgry>
-      <varFormat type="numeric" schema="other" />
-    </var>
-    <var ID="V267" name="HHMPREG" files="F4" intrvl="discrete">
-      <location RecSegNo="1" />
-      <labl><![CDATA[Is pregnant]]></labl>
-      <qstn>
-        <qstnLit><![CDATA[DM12. Is  %rostertitle% currently pregnant?]]></qstnLit>
-      </qstn>
-      <varFormat type="numeric" schema="other" />
-    </var>
-    <var ID="V268" name="NAME" files="F4" intrvl="discrete">
+    <var ID="V270" name="NAME" files="F4" intrvl="discrete">
       <location width="255" RecSegNo="1" />
       <labl><![CDATA[Roster list question]]></labl>
       <qstn />
       <varFormat type="character" schema="other" />
     </var>
-    <var ID="V269" name="interview__id" files="F4" intrvl="discrete">
+    <var ID="V271" name="interview__id" files="F4" intrvl="discrete">
       <location width="255" RecSegNo="1" />
       <labl><![CDATA[Unique 32-character long identifier of the interview]]></labl>
       <qstn />
@@ -4477,7 +4518,7 @@ If answer is '2' (No), stop here for the child questionnaire]]></ivuInstr>
       <fileName>BEDNETS.NSDstat</fileName>
       <dimensns>
         <caseQnty>0</caseQnty>
-        <varQnty>6</varQnty>
+        <varQnty>8</varQnty>
       </dimensns>
       <fileType>Nesstar 200801</fileType>
     </fileTxt>
