@@ -4,24 +4,8 @@ subtitle: "Sample data analysis"
 author: "Gian Aguilar"
 date: "4/29/2022"
 editor: visual
-fontsize: '12'
 ---
 
-```{=html}
-<style type="text/css">
-
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
-
-code.r{
-  font-size: 13px;
-  font-family: 'Fira Code', monospace;
-}
-pre {
-  font-size: 13px;
-  font-family: 'Fira Code', monospace;
-}
-</style>
-```
 ```{r}
 #| label: load-packages
 #| include: false
@@ -119,7 +103,9 @@ This document provides a brief guide to preparing SENS data for data analysis wh
 
 The statistical software that will be used in this guide is R, an open-source language for graphical and statistical computing. All examples and code will be written in R, with the assistance of some key packages. All code was developed and tested using the R **version 4.1.1**. Please ensure that your local R installation is version 4 or higher.
 
-In addition, this guide will make heavy use of the [*Tidyverse*](https://www.tidyverse.org/packages/), which is a set of packages and style-guidelines for data analysis in R. The two main Tidyverse packages used in this guide are `dplyr`, for data wrangling, and `ggplot2`, for plots and graphs. The 'R Code: Preparation' section contains more information about these and other R packages used in this guide.
+This guide assumes *no particular survey design* and thus includes no design elements such as survey weights, strata, clusters, etc. However, the `survey` R package may be used in order to define and incorporate these elements into the analysis.
+
+In addition, this guide will make heavy use of the [*Tidyverse*](https://www.tidyverse.org/packages/), which is a set of packages and style-guidelines for data analysis in R. The two main Tidyverse packages used in this guide are `dplyr`, for data wrangling, and `ggplot2`, for plots and graphs. The ['R Code: Preparation'](#preparation) section contains more information about these and other R packages used in this guide.
 
 ## Structure of Exported Data
 
@@ -145,7 +131,7 @@ For this guide, the files have been exported in SPSS format. The main survey fil
 
 For information on the system-generated Survey Solutions file, [please refer to the official documentation](https://docs.mysurvey.solutions/headquarters/export/system-generated---export-file-anatomy/).
 
-## R Code: Preparation
+## R Code: Preparation {#preparation}
 
 ### Installing and loading packages
 
@@ -255,7 +241,7 @@ Following, we create a simple function for displaying nicely formatted tables us
 formattedTable <- function(df, capt){
   df |> 
     kbl(caption = capt) |> 
-    kable_styling(font_size = 13, full_width = F,
+    kable_styling(font_size = 14, full_width = F,
                   bootstrap_options = c("hover", "condensed"))
 }
 ```

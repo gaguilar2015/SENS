@@ -161,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#structure-of-exported-data" id="toc-structure-of-exported-data" class="nav-link" data-scroll-target="#structure-of-exported-data">Structure of Exported Data</a></li>
-  <li><a href="#r-code-preparation" id="toc-r-code-preparation" class="nav-link" data-scroll-target="#r-code-preparation">R Code: Preparation</a>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation">R Code: Preparation</a>
   <ul class="collapse">
   <li><a href="#installing-and-loading-packages" id="toc-installing-and-loading-packages" class="nav-link" data-scroll-target="#installing-and-loading-packages">Installing and loading packages</a></li>
   <li><a href="#importing-merging-and-preparing-survey-files" id="toc-importing-merging-and-preparing-survey-files" class="nav-link" data-scroll-target="#importing-merging-and-preparing-survey-files">Importing, merging and preparing survey files</a></li>
@@ -210,25 +210,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<style type="text/css">
-
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
-
-code.r{
-  font-size: 13px;
-  font-family: 'Fira Code', monospace;
-}
-pre {
-  font-size: 13px;
-  font-family: 'Fira Code', monospace;
-}
-</style>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>The <a href="https://sens.unhcr.org">Standardised Expanded Nutrition Survey</a> (SENS) is a health and nutrition survey by the United Nation’s High Commission for Refugees (UNHCR), aimed at improving nutrition among refugee populations by gathering quality data to develop timely policies and interventions.</p>
 <p>This document provides a brief guide to preparing SENS data for data analysis when the data-source is Survey Solutions. It assumes that the reader is familiar with Survey Solutions and has implemented (or will implement) a SENS activity using the standard Survey Solutions SENS template <em>(will be linked when public).</em></p>
 <p>The statistical software that will be used in this guide is R, an open-source language for graphical and statistical computing. All examples and code will be written in R, with the assistance of some key packages. All code was developed and tested using the R <strong>version 4.1.1</strong>. Please ensure that your local R installation is version 4 or higher.</p>
-<p>In addition, this guide will make heavy use of the <a href="https://www.tidyverse.org/packages/"><em>Tidyverse</em></a>, which is a set of packages and style-guidelines for data analysis in R. The two main Tidyverse packages used in this guide are <code>dplyr</code>, for data wrangling, and <code>ggplot2</code>, for plots and graphs. The ‘R Code: Preparation’ section contains more information about these and other R packages used in this guide.</p>
+<p>This guide assumes <em>no particular survey design</em> and thus includes no design elements such as survey weights, strata, clusters, etc. However, the <code>survey</code> R package may be used in order to define and incorporate these elements into the analysis.</p>
+<p>In addition, this guide will make heavy use of the <a href="https://www.tidyverse.org/packages/"><em>Tidyverse</em></a>, which is a set of packages and style-guidelines for data analysis in R. The two main Tidyverse packages used in this guide are <code>dplyr</code>, for data wrangling, and <code>ggplot2</code>, for plots and graphs. The <a href="#preparation">‘R Code: Preparation’</a> section contains more information about these and other R packages used in this guide.</p>
 </section>
 <section id="structure-of-exported-data" class="level2">
 <h2 class="anchored" data-anchor-id="structure-of-exported-data">Structure of Exported Data</h2>
@@ -255,8 +243,8 @@ pre {
 </ul>
 <p>For information on the system-generated Survey Solutions file, <a href="https://docs.mysurvey.solutions/headquarters/export/system-generated---export-file-anatomy/">please refer to the official documentation</a>.</p>
 </section>
-<section id="r-code-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="r-code-preparation">R Code: Preparation</h2>
+<section id="preparation" class="level2">
+<h2 class="anchored" data-anchor-id="preparation">R Code: Preparation</h2>
 <section id="installing-and-loading-packages" class="level3">
 <h3 class="anchored" data-anchor-id="installing-and-loading-packages">Installing and loading packages</h3>
 <p>Several very useful R packages will be used in this guide. These should be installed (if not done so already) and then loaded.</p>
@@ -352,7 +340,7 @@ pre {
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>formattedTable <span class="ot">&lt;-</span> <span class="cf">function</span>(df, capt){</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span> </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kbl</span>(<span class="at">caption =</span> capt) <span class="sc">|&gt;</span> </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">13</span>, <span class="at">full_width =</span> F,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">14</span>, <span class="at">full_width =</span> F,</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"hover"</span>, <span class="st">"condensed"</span>))</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -371,7 +359,7 @@ pre {
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. output the results in a formatted table</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(response_freq, <span class="st">'Household Consent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="table table-hover table-condensed" style="font-size: 13px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Household Consent</caption>
  <thead>
   <tr>
@@ -435,7 +423,7 @@ pre {
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. output the results in a formatted table</span></span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(survey_totals, <span class="st">'Household Totals'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="table table-hover table-condensed" style="font-size: 13px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Household Totals</caption>
  <thead>
   <tr>
@@ -485,7 +473,7 @@ pre {
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>hh_sizecat <span class="ot">&lt;-</span> questionr<span class="sc">::</span><span class="fu">freq</span>(sens_hh<span class="sc">$</span>HHSIZE_CAT)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(hh_sizecat, <span class="st">'Household Size'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="table table-hover table-condensed" style="font-size: 13px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-hover table-condensed" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Household Size</caption>
  <thead>
   <tr>
