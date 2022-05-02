@@ -28,7 +28,7 @@ The image below displays all survey and system-generated files that are extracte
 
 For this guide, the files have been exported in SPSS format. The main survey files are:
 
--   sens_suso.sav - the base file containing all household-level items. The modules included at this level are
+-   sens.sav - the base file containing all household-level items. The modules included at this level are
     -   Demography (M. 1)
     -   Food Security (M. 5)
     -   Mosquito Net (M. 6)
@@ -49,10 +49,9 @@ For information on the system-generated Survey Solutions file, [please refer to 
 Several very useful R packages will be used in this guide. These should be installed (if not done so already) and then loaded.
 
 ```{r}
-#| include: true
 #| echo: true
-#| eval: true
 #| label: packages
+#| warning: false
 
 #To install the packages used in this guide, uncomment and run the lines below.
 #install.packages(haven)      # For importing SPSS files into R
