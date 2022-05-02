@@ -6,95 +6,6 @@ date: "4/29/2022"
 editor: visual
 ---
 
-```{r}
-#| label: load-packages
-#| include: false
-#| warning: false
-
-# THE FIRST TIME RUNNING THIS SCRIPT, UNCOMMENT THE BELOW COMMANDS AND RUN THEM
-# install.packages("devtools")
-#devtools::install_github("arthur-shaw/susoapi")
-#install.packages('rio')
-#install.packages('dplyr')
-#install.packages('haven')
-#install.packages('janitor')
-
-# Load the necessary libraries
-library(susoapi)
-library(dplyr)
-library(tidyr)
-library(haven)
-library(janitor)
-library(httr)
-library(questionr)
-library(kableExtra)
-library(ggplot2)
-library(palmerpenguins)
-
-#' zip file names
-ZIP_NAME <- 'SENS.zip'
-FOLDER_NAME <- 'SENS_FILES'
-
-#' File names
-BASE_FILE <- 'sens_suso'
-MEMBERS <- 'CHILD'
-
-#' In production, most of the below would be stored in environmental variables, for security reasons
-
-#' Survey Solutions API constants
-SERVER_URL <- 'http://surveys.belizeanalytics.com/'
-WS <- 'sens'
-QID <- '7dae055421cb4b7bbd136ae492a044d8$8'
-FILE_TYPE <- 'SPSS'
-
-#' API credentials
-API_USER <- Sys.getenv('SS_API_USER')
-API_PWD <- Sys.getenv('SS_API_PWD')
-```
-
-```{r}
-#| echo: false
-#| include: false
-#| eval: false
-
-set_credentials(
-  server = SERVER_URL,
-  user = API_USER,
-  password = API_PWD
-)
-
-export_data <- function(){
-  
-    start_export(
-    qnr_id = QID,
-    export_type = FILE_TYPE,
-    interview_status = "All",
-    include_meta = TRUE,
-    workspace = WS
-  ) -> started_job_id
-  
-  # get export status details and run a while loop until job is completed
-  exstat <- get_export_job_details(job_id = started_job_id, workspace = WS)
-  
-  while(exstat$ExportStatus != "Completed"){
-    exstat <- get_export_job_details(job_id = started_job_id, workspace = WS)
-  }
-  
-  reqUrl <- paste0(SERVER_URL, 'sens/api/v2/export/', exstat$JobId, "/file")
-  response <- GET(reqUrl, authenticate(API_USER, API_PWD))
-  files <- content(response, "raw")
-  
-  #3. Open a file connection to unzip downloaded files and save into local directory
-  filecon <- file(file.path('./', ZIP_NAME), "wb")
-  writeBin(files, filecon)
-  close(filecon)
-  
-  unzip(paste0('./', ZIP_NAME),
-        exdir = paste0('./', FOLDER_NAME))
-}
-export_data()
-```
-
 ## Introduction
 
 The [Standardised Expanded Nutrition Survey](https://sens.unhcr.org) (SENS) is a health and nutrition survey by the United Nation's High Commission for Refugees (UNHCR), aimed at improving nutrition among refugee populations by gathering quality data to develop timely policies and interventions.
@@ -159,6 +70,7 @@ library(tidyr)
 library(questionr)
 library(ggplot2)
 library(forcats)
+library(kableExtra)
 ```
 
 Additionally, some objects that will later help in theming plots and graphs are defined. All plots will be created using the `ggplot2` package. it is not important to understand the below code, but for more information on colors and theming in R and ggplot2, [please see here](http://sape.inf.usi.ch/quick-reference/ggplot2/colour).
