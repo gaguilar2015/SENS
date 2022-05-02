@@ -6,4 +6,6 @@ This project was created using [Quarto](https://quarto.org), a cutting-edge new 
 
 ## Alternative (simple) setup for running the code in this repository.
 You do not need to download the entire repository or to install Quarto in order to run the R Code in this repository. You can simply follow the [step-by-step analysis guide](https://gaguilar2015.github.io/SENS/) and copy-and-paste and run the code in RStudio as you go along. No other setup needed!
+
+**NOTE** the file index.qmd is the main source file.
  
