@@ -217,6 +217,16 @@ Analysing the output of the above frequencies, we can observe a few peculiaritie
 
 -   Other labelled data - We can observe that for other valid data, Survey Solutions produces values and labels, which is very useful during analysis.
 
+Further investigation into the structure and content of the exported data can and should be done in order to become familiar with the dataset and to gain some intuition on how the data looks after being (I) created by Survey Solutions, (II) exported by Survey Solutions in SPSS format, and (III) imported into R using the Haven package.
+
+The output below, which uses `dplyr`'s `glimpse` function, shows the first 30 variables of the SENS dataset. The output displays the variables going horizontally, the data type beside each variable, and a few of the data values.
+
+```{r}
+# We select a subset of the columns of the SENS dataset to "explore"
+sens_subset <- select(sens_df, 1:30)
+glimpse(sens_subset) 
+```
+
 Finally, we run a basic histogram below to get a sense of the age data on household members (HHMAGE). This can be useful for detecting possible outliers and for observing general trends.
 
 ```{r}

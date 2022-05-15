@@ -423,11 +423,52 @@ NA                   33 75.0   NA</code></pre>
 </ul></li>
 <li><p>Other labelled data - We can observe that for other valid data, Survey Solutions produces values and labels, which is very useful during analysis.</p></li>
 </ul>
+<p>Further investigation into the structure and content of the exported data can and should be done in order to become familiar with the dataset and to gain some intuition on how the data looks after being (I) created by Survey Solutions, (II) exported by Survey Solutions in SPSS format, and (III) imported into R using the Haven package.</p>
+<p>The output below, which uses <code>dplyr</code>’s <code>glimpse</code> function, shows the first 30 variables of the SENS dataset. The output displays the variables going horizontally, the data type beside each variable, and a few of the data values.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We select a subset of the columns of the SENS dataset to "explore"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sens_subset <span class="ot">&lt;-</span> <span class="fu">select</span>(sens_df, <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(sens_subset) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 48
+Columns: 30
+$ interview__key   &lt;chr&gt; "09-12-74-59", "60-26-84-57", "12-79-20-21", "94-09-2…
+$ interview__id.x  &lt;chr&gt; "39281449ec2d413082bb9792a80f53e5", "31e2a24e0da64d83…
+$ CAMPNAME         &lt;chr&gt; "Belize Camp 2A", "Belize 3A", "Belize Camp 3A", "Bel…
+$ SECTION          &lt;chr&gt; "009", "900", "567", "609", "609", "609", "001", "001…
+$ ZONE             &lt;dbl+lbl&gt; 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2…
+$ BLOCK            &lt;dbl+lbl&gt; 1, 6, 3, 4, 4, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2…
+$ CLUSTER          &lt;dbl+lbl&gt;  4,  2,  2, 43, 43, 43,  2,  1,  1,  1,  1,  1,  …
+$ HH               &lt;chr&gt; "2", "3", "33", "82", "82", "82", "4", "10", "10", "1…
+$ SURVDAT          &lt;chr&gt; "2022-04-30T10:50:40", "2022-04-30T10:51:49", "2022-0…
+$ COUNTRY          &lt;dbl+lbl&gt; 84, 84, 84, 84, 84, 84, 84, 84, 84, 84, 84, 84, 8…
+$ IYCF             &lt;dbl+lbl&gt; NA, NA, NA, NA, NA, NA,  1,  1,  1,  1,  1,  1,  …
+$ MDCCONST         &lt;dbl+lbl&gt; 2, 3, 3, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+$ GPSCONST         &lt;dbl+lbl&gt; NA, NA, NA,  1,  1,  1, NA,  2,  2,  2,  2,  2,  …
+$ HHGPS__Latitude  &lt;dbl+lbl&gt;       NA,       NA,       NA, 17.06893, 17.06893,…
+$ HHGPS__Longitude &lt;dbl+lbl&gt;        NA,        NA,        NA, -89.13822, -89.1…
+$ HHGPS__Accuracy  &lt;dbl+lbl&gt;     NA,     NA,     NA, 16.791, 16.791, 16.791,  …
+$ HHGPS__Altitude  &lt;dbl+lbl&gt;    NA,    NA,    NA, 109.3, 109.3, 109.3,    NA, …
+$ HHGPS__Timestamp &lt;chr&gt; "", "", "", "2022-04-30T17:01:33", "2022-04-30T17:01:…
+$ HHHSEX           &lt;dbl+lbl&gt; NA, NA, NA,  2,  2,  2, NA,  1,  1,  1,  1,  1,  …
+$ HHHAGE           &lt;dbl+lbl&gt; NA, NA, NA, 25, 25, 25, NA, 47, 47, 47, 47, 47, 4…
+$ HHHCTRY          &lt;dbl+lbl&gt;  NA,  NA,  NA, 320, 320, 320,  NA, 222, 222, 222,…
+$ HHHHOST          &lt;dbl+lbl&gt; NA, NA, NA,  2,  2,  2, NA,  2,  2,  2,  2,  2,  …
+$ HHHDIP           &lt;dbl+lbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ HHHREFUG         &lt;dbl+lbl&gt; NA, NA, NA,  1,  1,  1, NA,  1,  1,  1,  1,  1,  …
+$ NAME__0          &lt;chr&gt; "", "", "", "Gianni", "Gianni", "Gianni", "", "Rudy",…
+$ NAME__1          &lt;chr&gt; "", "", "", "Elvira", "Elvira", "Elvira", "", "Serge"…
+$ NAME__2          &lt;chr&gt; "", "", "", "Antonio", "Antonio", "Antonio", "", "Mar…
+$ NAME__3          &lt;chr&gt; "", "", "", "##N/A##", "##N/A##", "##N/A##", "", "kam…
+$ NAME__4          &lt;chr&gt; "", "", "", "##N/A##", "##N/A##", "##N/A##", "", "Hug…
+$ NAME__5          &lt;chr&gt; "", "", "", "##N/A##", "##N/A##", "##N/A##", "", "Fri…</code></pre>
+</div>
+</div>
 <p>Finally, we run a basic histogram below to get a sense of the age data on household members (HHMAGE). This can be useful for detecting possible outliers and for observing general trends.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sens_df, <span class="fu">aes</span>(<span class="at">x =</span> HHMAGE)) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> primaryColor) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">95</span>, <span class="dv">5</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">95</span>, <span class="dv">5</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sens_df, <span class="fu">aes</span>(<span class="at">x =</span> HHMAGE)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> primaryColor) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">95</span>, <span class="dv">5</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">95</span>, <span class="dv">5</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 </div>
@@ -435,7 +476,7 @@ NA                   33 75.0   NA</code></pre>
 <pre><code>Warning: Removed 4 rows containing non-finite values (stat_bin).</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -443,18 +484,18 @@ NA                   33 75.0   NA</code></pre>
 <h3 class="anchored" data-anchor-id="aesthetics">Aesthetics</h3>
 <p>Following, we create a few simple functions that will facilitating formatting and displaying data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. function that formats a data frame using the {kableExtra} package</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>formattedTable <span class="ot">&lt;-</span> <span class="cf">function</span>(df, capt){</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span> </span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kbl</span>(<span class="at">caption =</span> capt) <span class="sc">|&gt;</span> </span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">14</span>, <span class="at">full_width =</span> F,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"hover"</span>, <span class="st">"condensed"</span>))</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. function that formats a decimal value into a percent value</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>formatPercent <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="fu">round</span>(x, <span class="dv">2</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="st">'%'</span>)</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. function that formats a data frame using the {kableExtra} package</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>formattedTable <span class="ot">&lt;-</span> <span class="cf">function</span>(df, capt){</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span> </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kbl</span>(<span class="at">caption =</span> capt) <span class="sc">|&gt;</span> </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">14</span>, <span class="at">full_width =</span> F,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"hover"</span>, <span class="st">"condensed"</span>))</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. function that formats a decimal value into a percent value</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>formatPercent <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="fu">round</span>(x, <span class="dv">2</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="st">'%'</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -465,11 +506,11 @@ NA                   33 75.0   NA</code></pre>
 <p>Response rates are calculated from the consent (<code>MDCCONST</code>) variable. The function <code>freq</code> from the <code>questionr</code> package is used to produce easy frequency tables with labelled values.</p>
 <p>The result is displayed with the help of our <code>formattedTable</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. derive frequencies</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>response_freq <span class="ot">&lt;-</span> <span class="fu">freq</span>(sens_hh[<span class="st">"MDCCONST"</span>]) </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. output the results in a formatted table</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(response_freq, <span class="st">'Household Consent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. derive frequencies</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>response_freq <span class="ot">&lt;-</span> <span class="fu">freq</span>(sens_hh[<span class="st">"MDCCONST"</span>]) </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. output the results in a formatted table</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(response_freq, <span class="st">'Household Consent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-hover table-condensed" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Household Consent</caption>
@@ -516,24 +557,24 @@ NA                   33 75.0   NA</code></pre>
 <h3 class="anchored" data-anchor-id="household-totals">Household Totals</h3>
 <p>We can also display some aggregated summaries of the surveyed population. We will call these ‘Household Totals’ and they are derived by aggregating and summing the demographic summary variables available from the Demography module. We recall that these variables were automatically calculated by Survey Solutions for each interviewed household.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. summarise survey data on household totals</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>survey_totals <span class="ot">&lt;-</span> <span class="fu">summarise</span>(sens_hh, </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total Surveyed</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(HHSIZE, <span class="at">na.rm =</span> T),</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total U2</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTU2, <span class="at">na.rm =</span> T),</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total U5</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTU5, <span class="at">na.rm =</span> T),</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total 5-14</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT514, <span class="at">na.rm =</span> T),</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total 15-64</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT1564, <span class="at">na.rm =</span> T),</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total 65+</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT65OLD, <span class="at">na.rm =</span> T),</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total Pregnant</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTPREG, <span class="at">na.rm =</span> T))</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. pivot the table from wide to long format</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>survey_totals <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(survey_totals, </span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>                              <span class="at">cols =</span> <span class="fu">everything</span>(),</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>                              <span class="at">names_to =</span> <span class="st">"Household Totals"</span>,</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>                              <span class="at">values_to =</span> <span class="st">"Result"</span>) </span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. output the results in a formatted table</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(survey_totals, <span class="st">'Household Totals'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. summarise survey data on household totals</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>survey_totals <span class="ot">&lt;-</span> <span class="fu">summarise</span>(sens_hh, </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total Surveyed</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(HHSIZE, <span class="at">na.rm =</span> T),</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total U2</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTU2, <span class="at">na.rm =</span> T),</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total U5</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTU5, <span class="at">na.rm =</span> T),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total 5-14</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT514, <span class="at">na.rm =</span> T),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total 15-64</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT1564, <span class="at">na.rm =</span> T),</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total 65+</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOT65OLD, <span class="at">na.rm =</span> T),</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>                           <span class="st">`</span><span class="at">Total Pregnant</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(TOTPREG, <span class="at">na.rm =</span> T))</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. pivot the table from wide to long format</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>survey_totals <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(survey_totals, </span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>                              <span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>                              <span class="at">names_to =</span> <span class="st">"Household Totals"</span>,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>                              <span class="at">values_to =</span> <span class="st">"Result"</span>) </span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. output the results in a formatted table</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(survey_totals, <span class="st">'Household Totals'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-hover table-condensed" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Household Totals</caption>
@@ -582,8 +623,8 @@ NA                   33 75.0   NA</code></pre>
 <h3 class="anchored" data-anchor-id="household-size">Household Size</h3>
 <p>Using the <code>questionr</code> package, it is also easy to produce some basic frequency tables, such as household size categories using the <code>HHSIZE_CAT</code> variable created earlier.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>hh_sizecat <span class="ot">&lt;-</span> questionr<span class="sc">::</span><span class="fu">freq</span>(sens_hh<span class="sc">$</span>HHSIZE_CAT)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(hh_sizecat, <span class="st">'Household Size'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>hh_sizecat <span class="ot">&lt;-</span> questionr<span class="sc">::</span><span class="fu">freq</span>(sens_hh<span class="sc">$</span>HHSIZE_CAT)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(hh_sizecat, <span class="st">'Household Size'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-hover table-condensed" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Household Size</caption>
@@ -628,18 +669,18 @@ NA                   33 75.0   NA</code></pre>
 <p>For reporting, it might be useful to create some graphs and visuals of demographic data. Below, we use the ggplot2 package to create a simple bar graph of household size frequencies.</p>
 <p>For more information on ggplot2 and its syntax, refer to the <a href="https://r4ds.had.co.nz/data-visualisation.html#data-visualisation">Data Visualization chapter</a> in R For Data Science (Wickham, 2016).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># only keep valid respondent households</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>households <span class="ot">&lt;-</span> <span class="fu">filter</span>(sens_hh, MDCCONST <span class="sc">==</span> <span class="dv">1</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># bar chart of household size frequencies</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> households, <span class="fu">aes</span>(HHSIZE_CAT)) <span class="sc">+</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> primaryColor) <span class="sc">+</span> </span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Household Size'</span>, <span class="at">y =</span> <span class="st">'Count'</span>, <span class="at">title =</span> <span class="st">'Frequency of household size'</span>) <span class="sc">+</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  plotTheme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># only keep valid respondent households</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>households <span class="ot">&lt;-</span> <span class="fu">filter</span>(sens_hh, MDCCONST <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># bar chart of household size frequencies</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> households, <span class="fu">aes</span>(HHSIZE_CAT)) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> primaryColor) <span class="sc">+</span> </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Household Size'</span>, <span class="at">y =</span> <span class="st">'Count'</span>, <span class="at">title =</span> <span class="st">'Frequency of household size'</span>) <span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  plotTheme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -650,28 +691,28 @@ NA                   33 75.0   NA</code></pre>
 <p>We can also create a typical population pyramid. To do this, we first derive a data frame that groups data by sex and age group. Because of how <code>ggplot2</code> renders the data, we also make the male population figures negative, so that the male pyramid bars go to side opposite of the female pyramid bars.</p>
 <p>Thereafter, a somewhat complex <code>ggplot</code> function call is made to create the pyramid. Essentially, we are modifying a bar graph and applying some tricks to create the pyramid.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. derive age group populations by sex</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>agegroups <span class="ot">&lt;-</span> sens_df <span class="sc">|&gt;</span> </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SEX, AGEGROUP) <span class="sc">|&gt;</span> </span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">POPULATION =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">POPULATION =</span> <span class="fu">ifelse</span>(SEX <span class="sc">==</span> <span class="st">'Male'</span>, POPULATION <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span>, POPULATION))</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. create population pyramid</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> agegroups, <span class="fu">aes</span>(<span class="at">x =</span> AGEGROUP, <span class="at">y =</span> POPULATION, <span class="at">fill =</span> SEX)) <span class="sc">+</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">'identity'</span>) <span class="sc">+</span> </span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(primaryColor, secondaryColor)) <span class="sc">+</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="sc">~</span> <span class="fu">ifelse</span>(.x <span class="sc">&lt;</span> <span class="dv">0</span>, .x <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span>, .x)) <span class="sc">+</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span>    </span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Population Pyramid'</span>) <span class="sc">+</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">reverse =</span> T)) <span class="sc">+</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  plotTheme </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. derive age group populations by sex</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>agegroups <span class="ot">&lt;-</span> sens_df <span class="sc">|&gt;</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SEX, AGEGROUP) <span class="sc">|&gt;</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">POPULATION =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">POPULATION =</span> <span class="fu">ifelse</span>(SEX <span class="sc">==</span> <span class="st">'Male'</span>, POPULATION <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span>, POPULATION))</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. create population pyramid</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> agegroups, <span class="fu">aes</span>(<span class="at">x =</span> AGEGROUP, <span class="at">y =</span> POPULATION, <span class="at">fill =</span> SEX)) <span class="sc">+</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">'identity'</span>) <span class="sc">+</span> </span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(primaryColor, secondaryColor)) <span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="sc">~</span> <span class="fu">ifelse</span>(.x <span class="sc">&lt;</span> <span class="dv">0</span>, .x <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span>, .x)) <span class="sc">+</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span>    </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Population Pyramid'</span>) <span class="sc">+</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">reverse =</span> T)) <span class="sc">+</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  plotTheme </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 1 rows containing missing values (position_stack).</code></pre>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -683,20 +724,20 @@ NA                   33 75.0   NA</code></pre>
 <p>The Anthropmetry and Health module is the first child-level module, and thus captures some demographic child data. <em>This guide assumes that the IYCF module is included</em> in the SENS survey and therefore the child age range for <strong>eligibility is 0-59 months</strong>.</p>
 <p>In the code and table below, we first calculate the child (0-59 months) response rates.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. summarise data by response based on the MDCCONST variable</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># note: modify 'Target' to your local target # for children to sample</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>chResponse <span class="ot">&lt;-</span> sens_df <span class="sc">|&gt;</span> </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Target =</span> <span class="dv">120</span>,</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Total Surveyed</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(CHCONST <span class="sc">==</span> <span class="dv">1</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">% of Target</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="fu">round</span>((<span class="st">`</span><span class="at">Total Surveyed</span><span class="st">`</span><span class="sc">/</span>Target) <span class="sc">*</span> <span class="dv">100</span>,<span class="dv">2</span>), <span class="st">'%'</span>),</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Non-Responses</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(CHCONST <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">8</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Non-Reponse rate (%)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="fu">sum</span>(CHCONST <span class="sc">!=</span> <span class="dv">1</span>, <span class="at">na.rm =</span> T)<span class="sc">/</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>                                            <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(CHCONST), <span class="at">na.rm =</span> T), <span class="dv">3</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="st">'%'</span>)</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. output the results in a formatted table</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(chResponse, <span class="st">"Children 0-59 Months"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. summarise data by response based on the MDCCONST variable</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># note: modify 'Target' to your local target # for children to sample</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>chResponse <span class="ot">&lt;-</span> sens_df <span class="sc">|&gt;</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Target =</span> <span class="dv">120</span>,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Total Surveyed</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(CHCONST <span class="sc">==</span> <span class="dv">1</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">% of Target</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="fu">round</span>((<span class="st">`</span><span class="at">Total Surveyed</span><span class="st">`</span><span class="sc">/</span>Target) <span class="sc">*</span> <span class="dv">100</span>,<span class="dv">2</span>), <span class="st">'%'</span>),</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Non-Responses</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(CHCONST <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">8</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Non-Reponse rate (%)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="fu">sum</span>(CHCONST <span class="sc">!=</span> <span class="dv">1</span>, <span class="at">na.rm =</span> T)<span class="sc">/</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>                                            <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(CHCONST), <span class="at">na.rm =</span> T), <span class="dv">3</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="st">'%'</span>)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. output the results in a formatted table</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(chResponse, <span class="st">"Children 0-59 Months"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-hover table-condensed" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Children 0-59 Months</caption>
@@ -724,21 +765,21 @@ NA                   33 75.0   NA</code></pre>
 </div>
 <p>Next, we can create an age and sex distribution of the surveyed children, including the sex ratio (girl:boy).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. derive frequency table with totals, using the {janitor} package</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>chAgeSex <span class="ot">&lt;-</span> <span class="fu">tabyl</span>(<span class="at">dat =</span> sens_df, CHAGEGROUP, SEX, <span class="at">show_na =</span> F) <span class="sc">|&gt;</span> </span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">'row'</span>))</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. add percentage columns, format and rearrange columns</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>chAgeSex <span class="ot">&lt;-</span> chAgeSex <span class="sc">|&gt;</span> </span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Total =</span> Female <span class="sc">+</span> Male,</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">%</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">formatPercent</span>(Female<span class="sc">/</span>Total),</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">% </span><span class="st">`</span> <span class="ot">=</span> <span class="fu">formatPercent</span>(Male<span class="sc">/</span>Total),</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">Ratio =</span> <span class="fu">round</span>(Female<span class="sc">/</span>Male, <span class="dv">2</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(CHAGEGROUP, <span class="st">`</span><span class="at">Count</span><span class="st">`</span> <span class="ot">=</span> Female, <span class="st">`</span><span class="at">%</span><span class="st">`</span>, <span class="st">`</span><span class="at">Count </span><span class="st">`</span> <span class="ot">=</span> Male, <span class="st">`</span><span class="at">% </span><span class="st">`</span>, Total, Ratio)</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co">#3. output results to a formatted table, grouping some columns by sex</span></span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(chAgeSex, <span class="st">'Child Age and Sex Distribution'</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Female"</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">" "</span> <span class="ot">=</span> <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. derive frequency table with totals, using the {janitor} package</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>chAgeSex <span class="ot">&lt;-</span> <span class="fu">tabyl</span>(<span class="at">dat =</span> sens_df, CHAGEGROUP, SEX, <span class="at">show_na =</span> F) <span class="sc">|&gt;</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">'row'</span>))</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. add percentage columns, format and rearrange columns</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>chAgeSex <span class="ot">&lt;-</span> chAgeSex <span class="sc">|&gt;</span> </span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Total =</span> Female <span class="sc">+</span> Male,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">%</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">formatPercent</span>(Female<span class="sc">/</span>Total),</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">% </span><span class="st">`</span> <span class="ot">=</span> <span class="fu">formatPercent</span>(Male<span class="sc">/</span>Total),</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">Ratio =</span> <span class="fu">round</span>(Female<span class="sc">/</span>Male, <span class="dv">2</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(CHAGEGROUP, <span class="st">`</span><span class="at">Count</span><span class="st">`</span> <span class="ot">=</span> Female, <span class="st">`</span><span class="at">%</span><span class="st">`</span>, <span class="st">`</span><span class="at">Count </span><span class="st">`</span> <span class="ot">=</span> Male, <span class="st">`</span><span class="at">% </span><span class="st">`</span>, Total, Ratio)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co">#3. output results to a formatted table, grouping some columns by sex</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="fu">formattedTable</span>(chAgeSex, <span class="st">'Child Age and Sex Distribution'</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Female"</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">" "</span> <span class="ot">=</span> <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-hover table-condensed" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">Child Age and Sex Distribution</caption>
@@ -830,34 +871,34 @@ NA                   33 75.0   NA</code></pre>
 </div>
 <p>We do wasting now.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>sens_df<span class="sc">$</span>WFZ <span class="ot">&lt;-</span> <span class="fu">as.double</span>(sens_df<span class="sc">$</span>WFZ)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>sens_df <span class="ot">&lt;-</span> sens_df <span class="sc">|&gt;</span> </span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">WASTING =</span> <span class="fu">case_when</span>(</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>      WFZ <span class="sc">&gt;=</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">~</span> <span class="st">'No wasting'</span>,</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>      WFZ <span class="sc">&gt;=</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">~</span> <span class="st">'Moderate wasting'</span>,</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>      WFZ <span class="sc">&lt;</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">~</span> <span class="st">'Severe wasting'</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>sens_df<span class="sc">$</span>WASTING <span class="ot">&lt;-</span> <span class="fu">fct_relevel</span>(sens_df<span class="sc">$</span>WASTING, </span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'No wasting'</span>,</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'Moderate wasting'</span>,</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'Severe wasting'</span>)</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">filter</span>(sens_df, <span class="sc">!</span><span class="fu">is.na</span>(WASTING)),<span class="fu">aes</span>(<span class="at">x =</span> CHAGEGROUP, <span class="at">fill =</span> WASTING)) <span class="sc">+</span></span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">'fill'</span>) <span class="sc">+</span></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>  applyPercentLabels <span class="sc">+</span></span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Age Group'</span>, <span class="at">y =</span> <span class="st">'Proportion'</span>, </span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">'Prevalence of wasting by age in children 6-59 months'</span>) <span class="sc">+</span></span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'aquamarine3'</span>, <span class="st">'salmon'</span>, <span class="st">'firebrick1'</span>)) <span class="sc">+</span></span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">reverse =</span> T)) <span class="sc">+</span></span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>  plotTheme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sens_df<span class="sc">$</span>WFZ <span class="ot">&lt;-</span> <span class="fu">as.double</span>(sens_df<span class="sc">$</span>WFZ)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>sens_df <span class="ot">&lt;-</span> sens_df <span class="sc">|&gt;</span> </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">WASTING =</span> <span class="fu">case_when</span>(</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>      WFZ <span class="sc">&gt;=</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">~</span> <span class="st">'No wasting'</span>,</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>      WFZ <span class="sc">&gt;=</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">~</span> <span class="st">'Moderate wasting'</span>,</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>      WFZ <span class="sc">&lt;</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">~</span> <span class="st">'Severe wasting'</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>sens_df<span class="sc">$</span>WASTING <span class="ot">&lt;-</span> <span class="fu">fct_relevel</span>(sens_df<span class="sc">$</span>WASTING, </span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'No wasting'</span>,</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'Moderate wasting'</span>,</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>                                <span class="st">'Severe wasting'</span>)</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">filter</span>(sens_df, <span class="sc">!</span><span class="fu">is.na</span>(WASTING)),<span class="fu">aes</span>(<span class="at">x =</span> CHAGEGROUP, <span class="at">fill =</span> WASTING)) <span class="sc">+</span></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">'fill'</span>) <span class="sc">+</span></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>  applyPercentLabels <span class="sc">+</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Age Group'</span>, <span class="at">y =</span> <span class="st">'Proportion'</span>, </span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">'Prevalence of wasting by age in children 6-59 months'</span>) <span class="sc">+</span></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'aquamarine3'</span>, <span class="st">'salmon'</span>, <span class="st">'firebrick1'</span>)) <span class="sc">+</span></span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">reverse =</span> T)) <span class="sc">+</span></span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>  plotTheme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
