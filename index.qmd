@@ -211,7 +211,7 @@ Analysing the output of the above frequencies, we can observe a few peculiaritie
 
 -   System-missing data - *These data are coded as **NA** by R*. These are data that are missing because the software determines that they are not applicable. For example all questions that are disabled in Survey Solutions are questions that should not be asked and thus the data is missing.
 
--   User-missing data - These data are coded as -999999999 by Survey Solutions. These are data intentionally or unintentionally left blank by the data-capturer. Survey Solutions codes these as -999999999 with the label 'missing'. These correspond to questions which the software determined that they should have been asked, but no response was recorded.
+-   User-missing data - *These data are coded as **-999999999** by Survey Solutions*. These are data intentionally or unintentionally left blank by the data-capturer. Survey Solutions codes these as -999999999 with the label 'missing'. These correspond to questions which the software determined that they should have been asked, but no response was recorded.
 
     -   Some users might want to code user-missing data under the same category as options such as "Don't know" or "Not applicable". This depends on the particular analysis plan.
 
