@@ -75,36 +75,6 @@ library(forcats)
 library(kableExtra)
 ```
 
-Additionally, some objects that will later help in theming plots and graphs are defined. All plots will be created using the `ggplot2` package. it is not important to understand the below code, but for more information on colors and theming in R and ggplot2, [please see here](http://sape.inf.usi.ch/quick-reference/ggplot2/colour).
-
-```{r}
-# theme colors for plots
-primaryColor <- 'turquoise4'
-secondaryColor <- 'wheat3'
-
-# ggplot2 theme object for styling plots
-plotTheme <-   theme_minimal() +
-  theme(
-    panel.grid.minor.x = element_blank(),
-    panel.grid.major.x = element_blank(),
-    text = element_text(size = 16),
-    legend.position = 'bottom',
-    title = element_text(size = 13)
-  )
-
-# An overlay of percent-label text on some plots
-applyPercentLabels <- geom_text(
-    aes(y=..count../tapply(..count.., ..x.. ,sum)[..x..],
-        label=paste0(round((..count../tapply(..count.., ..x.. ,sum)[..x..]), 
-                           3) * 100, '%')),
-    size = 4, 
-    color = 'white',
-    stat="count", 
-    position=position_fill(0.5), 
-    vjust=-0.5, 
-    hjust = 0.4)
-```
-
 ### Importing, merging and preparing survey files
 
 It is assumed that you have downloaded and extracted the SENS survey files into a folder called `SENS_FILES` in your local working directory. These files can now be worked with. What follows in this subsection is some basic preparation of the survey data to facilitate further analysis.
@@ -231,14 +201,14 @@ Finally, we run a basic histogram below to get a sense of the age data on househ
 
 ```{r}
 ggplot(sens_df, aes(x = HHMAGE)) +
-  geom_histogram(fill = primaryColor) +
+  geom_histogram(fill = 'turquoise4') +
   scale_x_continuous(labels = seq(0, 95, 5), breaks = seq(0, 95, 5)) 
 
 ```
 
 ### Aesthetics
 
-Following, we create a few simple functions that will facilitating formatting and displaying data.
+The code below is simply for formatting the aesthetics of the output in the rest of this guide. A few functions and objects that help us format tables and plots are created. All plots will be created using the `ggplot2` package. it is not important to understand the below code, but for more information on colors and theming in R and ggplot2, [please see here](http://sape.inf.usi.ch/quick-reference/ggplot2/colour).
 
 ```{r}
 # 1. function that formats a data frame using the {kableExtra} package
@@ -253,6 +223,32 @@ formattedTable <- function(df, capt){
 formatPercent <- function(x){
   paste0(round(x, 2) * 100, '%')
 }
+
+# 3. theme colors for plots
+primaryColor <- 'turquoise4'
+secondaryColor <- 'wheat3'
+
+# 4. ggplot2 theme object for styling plots
+plotTheme <-   theme_minimal() +
+  theme(
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_blank(),
+    text = element_text(size = 16),
+    legend.position = 'bottom',
+    title = element_text(size = 13)
+  )
+
+# 5. An overlay of percent-label text on some plots
+applyPercentLabels <- geom_text(
+    aes(y=..count../tapply(..count.., ..x.. ,sum)[..x..],
+        label=paste0(round((..count../tapply(..count.., ..x.. ,sum)[..x..]), 
+                           3) * 100, '%')),
+    size = 4, 
+    color = 'white',
+    stat="count", 
+    position=position_fill(0.5), 
+    vjust=-0.5, 
+    hjust = 0.4)
 ```
 
 ## Module 1: Demography
