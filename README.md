@@ -1,5 +1,5 @@
 # Sample Analysis Code for a Survey Solutions SENS survey
-This repository contains a sample data analysis of SENS survey data with R, which can be found in [this corresponding website](https://gaguilar2015.github.io/SENS/). The aim is to succintly demonstrate how to prepare, process, explore and analyze a SENS dataset when the data-collection platform is [Survey Solutions](https://mysurvey.solutions/en/), a free data collection platform by the World Bank. This project was created as part of a consultation with the World Bank. 
+This repository is the source for [this accompanying website](https://gaguilar2015.github.io/SENS/), which contains a sample data analysis plan for SENS survey data with R. The aim is to succintly demonstrate how to prepare, process, explore and analyze a SENS dataset when the data-collection platform is [Survey Solutions](https://mysurvey.solutions/en/), a free data collection platform by the World Bank. This project was created as part of a consultation with the World Bank. 
 
 This project is still under active development.
 
