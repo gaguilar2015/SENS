@@ -331,7 +331,8 @@ Thereafter, a somewhat complex `ggplot` function call is made to create the pyra
 
 # 1. derive age group populations by sex
 agegroups <- sens_df |> 
-  group_by(SEX, AGEGROUP) |> 
+  filter(!is.na(AGEGROUP), !is.na(SEX)) |> 
+  group_by(SEX, AGEGROUP, CAMPNAME) |> 
   summarise(POPULATION = n(), .groups = 'drop') |> 
   mutate(POPULATION = ifelse(SEX == 'Male', POPULATION * -1, POPULATION))
 
@@ -346,7 +347,26 @@ ggplot(data = agegroups, aes(x = AGEGROUP, y = POPULATION, fill = SEX)) +
   plotTheme 
 ```
 
+We could also generate individual population pyramids conditioned on a particular variable - say, CAMPNAME. This can be achieved with `ggplot`'s `facet_wrap` function. Although we need a lot more data to truly appreciate this visually, the code and output is demonstrated below:
+
+```{r, out.width='80%', fig.align='center'}
+#| code-line-numbers: "9"
+
+# 3. create faceted population pyramid
+ggplot(data = agegroups, aes(x = AGEGROUP, y = POPULATION, fill = SEX)) +
+  geom_bar(stat='identity') + 
+  scale_fill_manual(values=c(primaryColor, secondaryColor)) +
+  scale_y_continuous(labels = ~ ifelse(.x < 0, .x * -1, .x)) +
+  coord_flip() +    
+  labs(title = 'Population Pyramid') +
+  guides(fill = guide_legend(reverse = T)) +
+  facet_wrap(~ CAMPNAME, nrow = 1) +
+  plotTheme 
+```
+
 ## Module 2: Anthropometry and Health
+
+### Counts and Summaries
 
 The Anthropmetry and Health module is the first child-level module, and thus captures some demographic child data. *This guide assumes that the IYCF module is included* in the SENS survey and therefore the child age range for **eligibility is 0-59 months**.
 
@@ -389,7 +409,9 @@ formattedTable(chAgeSex, 'Child Age and Sex Distribution') |>
   add_header_above(c(" " = 1, "Female" = 2, "Male" = 2, " " = 2))
 ```
 
-We do wasting now.
+### Wasting
+
+Wasting is a type of acute malnutrition that is calculated from the weight-for-height or weight-for-length rations in young children. Below, we see a summary proportion bar plot of moderate and severe wasting across age groups. The WFZ (weight-for-N) score was calculated via a real-time function implemented in the Survey Solutions SENS questionnaire, and is available in the exported data. This is the primary variable used in calculating the wasting displayed below.
 
 ```{r, out.width='80%', fig.align='center'}
 sens_df$WFZ <- as.double(sens_df$WFZ)
