@@ -337,7 +337,7 @@ agegroups <- sens_df |>
   mutate(POPULATION = ifelse(SEX == 'Male', POPULATION * -1, POPULATION))
 
 # 2. create population pyramid
-ggplot(data = agegroups, aes(x = AGEGROUP, y = POPULATION, fill = SEX)) +
+mainPyramid <- ggplot(data = agegroups, aes(x = AGEGROUP, y = POPULATION, fill = SEX)) +
   geom_bar(stat='identity') + 
   scale_fill_manual(values=c(primaryColor, secondaryColor)) +
   scale_y_continuous(labels = ~ ifelse(.x < 0, .x * -1, .x)) +
@@ -345,6 +345,8 @@ ggplot(data = agegroups, aes(x = AGEGROUP, y = POPULATION, fill = SEX)) +
   labs(title = 'Population Pyramid') +
   guides(fill = guide_legend(reverse = T)) +
   plotTheme 
+
+mainPyramid
 ```
 
 We could also generate individual population pyramids conditioned on a particular variable - say, CAMPNAME. This can be achieved with `ggplot`'s `facet_wrap` function. Although we need a lot more data to truly appreciate this visually, the code and output is demonstrated below:
@@ -353,15 +355,8 @@ We could also generate individual population pyramids conditioned on a particula
 #| code-line-numbers: "9"
 
 # 3. create faceted population pyramid
-ggplot(data = agegroups, aes(x = AGEGROUP, y = POPULATION, fill = SEX)) +
-  geom_bar(stat='identity') + 
-  scale_fill_manual(values=c(primaryColor, secondaryColor)) +
-  scale_y_continuous(labels = ~ ifelse(.x < 0, .x * -1, .x)) +
-  coord_flip() +    
-  labs(title = 'Population Pyramid') +
-  guides(fill = guide_legend(reverse = T)) +
-  facet_wrap(~ CAMPNAME, nrow = 1) +
-  plotTheme 
+mainPyramid +
+  facet_wrap(~ CAMPNAME, nrow = 1) 
 ```
 
 ## Module 2: Anthropometry and Health
